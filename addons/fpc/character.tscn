@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://blccl4syvt3yn" path="res://addons/fpc/character.gd" id="1_0t4e8"]
-[ext_resource type="Script" uid="uid://c2obk00hpfkni" path="res://EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://56xngxpp73vr" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
@@ -445,6 +444,3 @@ layout_mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_k4wwl")
 target_position = Vector3(0, 0.5, 0)
-
-[node name="EditorModule" type="Node" parent="." unique_id=322149046]
-script = ExtResource("3_v3ckk")
