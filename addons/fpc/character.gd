@@ -33,6 +33,7 @@ extends CharacterBody3D
 @export_file var default_reticle
 
 @export_file var interact_reticle
+@export_file var hold_reticle
 
 @export_category("Holding Objects")
 @export var throwForce = 7.5
@@ -179,11 +180,15 @@ func _process(_delta):
 		var hit_object = RAYCAST.get_collider()
 		if hit_object.is_in_group("Interactable"):
 		##	print(hit_object.get_path())
-			change_reticle(interact_reticle)
+			if heldObject == null:
+				change_reticle(interact_reticle)
 		else:
-			change_reticle(default_reticle)
+			if heldObject == null: 
+				change_reticle(default_reticle)
+				
 	if not RAYCAST.is_colliding():
-		change_reticle(default_reticle)
+		if heldObject == null: 
+				change_reticle(default_reticle)
 	
 	
 
@@ -516,9 +521,11 @@ func handle_pausing():
 func set_held_object(body: RigidBody3D):
 	if body is RigidBody3D:
 		heldObject = body
-
+		change_reticle(hold_reticle)
+	
 func drop_held_object():
 	heldObject = null
+	change_reticle(default_reticle)
 
 func throw_held_object():
 	var obj = heldObject
