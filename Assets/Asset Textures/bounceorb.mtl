@@ -1,0 +1,12 @@
+# Blender 5.3.0 MTL File: 'None'
+# www.blender.org
+
+newmtl energy_ball
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd GitHub/RE-ROUTE/Assets/Asset Textures/Material Tetxures/energyballsurface.png
+map_d GitHub/RE-ROUTE/Assets/Asset Textures/Material Tetxures/energyballsurface.png
