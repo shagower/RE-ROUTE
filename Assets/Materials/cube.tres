@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://d1tr4kebtbug0"]
 
-[ext_resource type="Texture2D" uid="uid://stgmife8aeuf" path="res://Assets/Asset Textures/Material Tetxures/storagecube.png" id="1_bl2k5"]
+[ext_resource type="Texture2D" uid="uid://ca31e2hckmaei" path="res://Assets/Asset Textures/Material Tetxures/storagecube.png" id="1_bl2k5"]
 [ext_resource type="Texture2D" uid="uid://c4xnk45duilms" path="res://Assets/Asset Textures/Material Tetxures/storagecubeemissiont.png" id="2_o1e03"]
 
 [resource]
