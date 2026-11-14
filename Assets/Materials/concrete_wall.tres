@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dqm36en8oi2nr" path="res://Assets/Asset Textures/concretewall.png" id="1_g5ydt"]
 
 [resource]
+diffuse_mode = 1
 albedo_texture = ExtResource("1_g5ydt")
-ao_texture_channel = 3
+ao_texture_channel = 4
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv2_triplanar = true
+texture_filter = 0
