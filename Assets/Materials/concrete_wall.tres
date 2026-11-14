@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dw0e8qcxbm2ot"]
 
-[ext_resource type="Texture2D" uid="uid://dqm36en8oi2nr" path="res://Assets/Asset Textures/concretewall.png" id="1_g5ydt"]
+[ext_resource type="Texture2D" uid="uid://dqm36en8oi2nr" path="res://Assets/Asset Textures/Material Tetxures/concretewall.png" id="1_g5ydt"]
 
 [resource]
 diffuse_mode = 1
