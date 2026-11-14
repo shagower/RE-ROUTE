@@ -1,0 +1,364 @@
+@tool
+extends GDTComponent
+class_name GDTSettings
+
+signal settings_changed
+
+const FILE_PATH = "res://addons/GodotTogether/settings.json"
+
+const _DEFAULT_DATA = {
+	"username": "Cool person",
+	"format_version": 1,
+	
+	"last_connection": {
+		"ip": "",
+		"port": 5017,
+	},
+	
+	"server": {
+		"password": "",
+		"port": 5017,
+		"max_users": 10,
+		"whitelist": ["127.0.0.1", "0.0.0.0", "0:0:0:0:0:0:0:1"],
+		"blacklist": [],
+		"whitelist_enabled": false,
+		"allow_external_connections": true,
+		"allow_multiple_users_from_same_address": true,
+		"require_approval": false
+	},
+	"client": {
+		"timeout": 15,
+	},
+	"sync": {
+		"node_scan_pause_unfocused": true,
+		"node_adaptive_scan_interval": true,
+		"node_scan_mode": GDTNodeSync.NodeScanMode.CONTINUOUS,
+		"node_scan_interval": 0.025,
+		"file_scan_interval": 1,
+	},
+	"update": {
+		"latest_version": null,
+		"download_url": null,
+		"download_signature": null,
+		"last_check": 0,
+		"check_interval_hours": 168, # weekly
+		"auto_check_enabled": true
+	},
+	"files": {
+		"auto_reload_files": true
+	},
+	"security": {
+		"sanitize_tool_scripts": true
+	},
+	"dev": {
+		# Everything here should be false by default
+		"menu_button": false,
+		"run_tests_on_start": false,
+		"restart_broadcast": false,
+		"allow_file_reload_outside_sessions": false,
+		
+		"disable_real_time_file_sync": false,
+		"disable_real_time_node_sync": false,
+		"always_scan_nodes": false,
+		
+		"log_settings": false,
+		
+		"log_rpc_out": false,
+		"log_rpc_in": false,
+		
+		"log_node_changes": false,
+		"log_node_scans": false,
+		"log_node_remote_changes": false,
+		
+		"log_file_changes": false,
+		"log_file_scans": false,
+		"log_file_net": false
+	},
+	"notifications": {
+		"users": true
+	},
+	"ui": {
+		"show_inspector_on_select_while_in_user_dock": true,
+	},
+	"seen" : {
+		"disclaimer": false
+	}
+}
+
+const RENAME_MAP := {
+	"sync/node_refresh_rate": "sync/node_scan_interval",
+	"sync/file_refresh_rate": "sync/file_scan_interval"
+}
+
+var data := {}
+var is_unsaved := false
+var have_changed := false
+var error_message := ""
+var error_line := 0
+
+var save_mutex := Mutex.new()
+var update_mutex := Mutex.new()
+
+func _ready() -> void:
+	if GDTUtils.has_readonly(data):
+		component_error("Data dict contains read-only values")
+		return
+	
+	var save_timer = Timer.new()
+	save_timer.timeout.connect(save_if_changed)
+	save_timer.wait_time = 1
+	add_child(save_timer)
+	save_timer.start()
+	
+	report_ready()
+
+func _component_init() -> void:
+	load_default()
+
+func is_logging_enabled() -> bool:
+	return get_setting("dev/log_settings")
+
+func save_if_changed() -> void:
+	if not have_changed: return
+	if not is_unsaved: return
+	
+	save_settings()
+
+func has_error() -> bool:
+	return not error_message.is_empty()
+
+func load_default() -> void:
+	update_mutex.lock()
+	
+	data = get_default_data()
+	settings_changed.emit()
+	
+	update_mutex.unlock()
+	
+	if is_logging_enabled():
+		print("Loaded default settings")
+
+func save_settings() -> void:
+	save_mutex.lock()
+	
+	var f = FileAccess.open(FILE_PATH, FileAccess.WRITE)
+	
+	if not f:
+		var err_str = error_string(FileAccess.get_open_error())
+		GDTUtils.printerr_stack("Unable to open settings file for saving: %s" % err_str)
+		return
+	
+	f.store_string(JSON.stringify(data,"	"))
+	is_unsaved = false
+	
+	save_mutex.unlock()
+
+func load_settings() -> bool:
+	error_message = ""
+	error_line = 0
+	
+	if not settings_exist():
+		load_default()
+		return true
+	
+	var f = FileAccess.open(FILE_PATH, FileAccess.READ)
+	
+	if not f:
+		var err_str = error_string(FileAccess.get_open_error())
+		GDTUtils.printerr_stack("Unable to open settings file for reading: %s" % err_str)
+		return false
+	
+	var json = JSON.new()
+	var err = json.parse(f.get_as_text(), true)
+	
+	if err != OK:
+		GDTUtils.printerr_stack("Parsing settings failed, loading default data")
+		error_message = json.get_error_message()
+		error_line = json.get_error_line()
+		load_default()
+		return false
+	
+	var parsed = json.data
+	
+	if typeof(parsed) == TYPE_ARRAY:
+		error_message = "Data is not a dictionary, but an array"
+		load_default()
+		return false
+	
+	update_mutex.lock()
+	
+	data = process_settings_data(parsed)
+	
+	if is_logging_enabled():
+		print("Settings loaded")
+	
+	settings_changed.emit()
+	update_mutex.unlock()
+	
+	return true
+
+func process_settings_data(dict: Dictionary) -> Dictionary:
+	var merged = GDTUtils.merge(dict.duplicate(true), get_default_data())
+	dict = merged.duplicate(true)
+	
+	rename_data(dict, RENAME_MAP)
+	
+	return dict
+
+func reset_settings() -> void:
+	if is_logging_enabled():
+		print("Resetting settings")
+	
+	have_changed = false
+	
+	load_default()
+	save_settings()
+
+func store_update_cache(update: GDTUpdateCheckResult) -> void:
+	const ALLOWED_TYPES = [
+		GDTUpdateCheckResult.ResultType.RunningLatest, 
+		GDTUpdateCheckResult.ResultType.UpdateAvailable
+	]
+	
+	if not update.type in ALLOWED_TYPES:
+		GDTUtils.printerr_stack("Cannot store invalid check result %s" % update.type)
+		return
+	
+	var sig64 = Marshalls.raw_to_base64(update.signature_buf)
+	
+	set_setting("update/latest_version", update.version)
+	set_setting("update/download_url", update.download_url)
+	set_setting("update/download_signature", sig64)
+
+func reset_setting(path: String) -> void:
+	var default_val = GDTUtils.get_nested(get_default_data(), path)
+	set_setting(path, default_val)
+
+func clear_update_cache() -> void:
+	reset_setting("update/")
+
+func get_update_cache() -> GDTUpdateCheckResult:
+	var ver = get_setting("update/latest_version")
+	var url = get_setting("update/download_url")
+	var sig_text = get_setting("update/download_signature")
+	
+	if not ver or not url:
+		return
+	
+	if sig_text:
+		sig_text = sig_text.remove_chars("\r\t\n\ufffd\"',. ")
+	else:
+		sig_text = ""
+	
+	var res = GDTUpdateCheckResult.new()
+	res.type = GDTUpdateCheckResult.ResultType.UnknownState
+	res.version = ver
+	res.download_url = url
+	res.signature_buf = Marshalls.base64_to_raw(sig_text)
+	
+	return res
+
+func get_setting(path: String):
+	return GDTUtils.get_nested(data, path)
+
+func set_setting(path: String, value) -> void:
+	if has_error():
+		GDTUtils.printerr_stack("Not updating when settings loaded with errors: %s" % path)
+		return
+	
+	update_mutex.lock()
+	
+	is_unsaved = true
+	have_changed = true
+	
+	GDTUtils.set_nested(data, path, value)
+	settings_changed.emit()
+	
+	update_mutex.unlock()
+	
+	if is_logging_enabled():
+		print("Setting changed: %s: %s" % [path, value])
+
+func _set_setting_reverse(value, path: String) -> void:
+	set_setting(path, value)
+
+func make_setting_control(
+	node: Control, 
+	path: String, 
+	format := "", 
+	callback: Callable = _none
+) -> void:
+	var sig = null
+	
+	if node is OptionButton:
+		node.item_selected.connect(func(idx):
+			var id = node.get_item_id(idx)
+			set_setting(path, id)
+		)
+		sig = node.item_selected
+	
+	elif node is Button:
+		if not node.toggle_mode:
+			push_error("Button %s must have toggle_mode enabled" % node.name)
+		
+		node.toggled.connect(_set_setting_reverse.bind(path))
+		sig = node.toggled
+	elif node is SpinBox:
+		node.value_changed.connect(_set_setting_reverse.bind(path))
+		sig = node.value_changed
+	elif node is LineEdit:
+		node.text_changed.connect(_set_setting_reverse.bind(path))
+		sig = node.text_changed
+	elif node is Label:
+		pass
+	else:
+		GDTUtils.printerr_stack("Unsupported control %s %s" % [node.get_class() ,node])
+	
+	update_control(node, path, format)
+	
+	# Direct connection doesn't seem to work. Using lamba
+	GDTUtils.try_connect(settings_changed, func():
+		update_control(node, path, format)
+	)
+	
+	if sig:
+		sig.connect(func(_a = null, _b = null, _c = null, _d = null):
+			callback.call()
+		)
+
+func update_control(node: Control, path: String, format := "") -> void:
+	var value = get_setting(path)
+	
+	if node is LineEdit and node.is_editing():
+		return
+	
+	GDTUtils.set_control_value(node, value, format)
+
+static func rename_data(dict: Dictionary, rename_map: Dictionary) -> void:
+	for old_path in rename_map.keys():
+		var new_path = rename_map[old_path]
+		
+		if not GDTUtils.has_nested(dict, old_path):
+			continue
+		
+		if GDTUtils.has_nested(dict, new_path):
+			continue
+		
+		var val = GDTUtils.get_nested(dict, old_path)
+		
+		if not GDTUtils.set_nested(dict, new_path, val):
+			continue
+			
+		GDTUtils.erase_nested(dict, old_path)
+
+static func get_absolute_path() -> String:
+	return ProjectSettings.globalize_path(FILE_PATH)
+
+static func settings_exist() -> bool:
+	return FileAccess.file_exists(FILE_PATH)
+
+static func get_default_data() -> Dictionary:
+	return _DEFAULT_DATA.duplicate(true)
+
+static func _none() -> void:
+	pass

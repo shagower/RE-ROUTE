@@ -1,3 +1,57 @@
 [gd_scene format=3 uid="uid://b8j58yi4nxl7h"]
 
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
+
+[sub_resource type="Environment" id="Environment_6g22i"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 2.23
+ambient_light_color = Color(0.47440344, 0.26106426, 0.23348269, 1)
+ambient_light_energy = 4.79
+reflected_light_source = 2
+ssil_sharpness = 1.0
+
 [node name="main" type="Node3D" unique_id=1945090909]
+
+[node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.3068674, 0)
+
+[node name="Map" type="Node3D" parent="." unique_id=718820290]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map" unique_id=363282529 groups=["PlayerCollision"]]
+transform = Transform3D(28.898096, 0, 0, 0, 1, 0, 0, 0, 26.082108, 0.21834087, 12.392989, -0.66892195)
+cast_shadow = 2
+use_collision = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/CSGBox3D" unique_id=1903306941]
+transform = Transform3D(0.062051073, 0, 0, 0, 1, 0, 0, 0, 0.03834046, 0, -1.5531406, 0)
+light_energy = 5.277
+light_size = 3.0
+shadow_enabled = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map" unique_id=1664159484 groups=["PlayerCollision"]]
+transform = Transform3D(28.898096, 0, 0, 0, 1, 0, 0, 0, 26.082108, 0, 0, 0)
+cast_shadow = 2
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map" unique_id=362334928 groups=["PlayerCollision"]]
+transform = Transform3D(1.1752505, 0, 0, 0, 16.12721, 0, 0, 0, 26.082108, -14.322281, 6.363922, 0)
+cast_shadow = 2
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Map" unique_id=1759790207 groups=["PlayerCollision"]]
+transform = Transform3D(1.1752505, 0, 0, 0, 16.12721, 0, 0, 0, 26.082108, 13.774832, 6.363922, 0)
+cast_shadow = 2
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Map" unique_id=768664955 groups=["PlayerCollision"]]
+transform = Transform3D(-5.137183e-08, 0, 33.8455, 0, 16.12721, 0, -1.1752504, 0, -1.4794336e-06, -0.27372375, 6.363922, 13.059548)
+cast_shadow = 2
+use_collision = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Map" unique_id=717384474 groups=["PlayerCollision"]]
+transform = Transform3D(-5.137183e-08, 0, 33.8455, 0, 16.12721, 0, -1.1752504, 0, -1.4794336e-06, -0.27372536, 6.363922, -12.954218)
+cast_shadow = 2
+use_collision = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=771664980]
+environment = SubResource("Environment_6g22i")
