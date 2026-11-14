@@ -31,6 +31,7 @@ mesh = ExtResource("2_0xm2m")
 [node name="StaticBody3D" type="StaticBody3D" parent="Testroomobj" unique_id=1617769141]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Testroomobj/StaticBody3D" unique_id=430888803]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_0xm2m")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=656250242]
