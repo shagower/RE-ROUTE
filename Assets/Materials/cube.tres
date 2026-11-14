@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1tr4kebtbug0"]
+
+[ext_resource type="Texture2D" uid="uid://stgmife8aeuf" path="res://Assets/Asset Textures/Material Tetxures/storagecube.png" id="1_bl2k5"]
+
+[resource]
+albedo_texture = ExtResource("1_bl2k5")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true

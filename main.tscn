@@ -4,8 +4,8 @@
 [ext_resource type="ArrayMesh" uid="uid://pisjodgsm2o7" path="res://addons/testroomobj.obj" id="2_0xm2m"]
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="2_h2yge"]
 [ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="4_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://stgmife8aeuf" path="res://Assets/Asset Textures/Material Tetxures/storagecube.png" id="4_272bh"]
-[ext_resource type="Texture2D" uid="uid://bkt62h8uv5l8g" path="res://Assets/Asset Textures/Material Tetxures/energyballsurface.png" id="5_5vw27"]
+[ext_resource type="Material" uid="uid://d1tr4kebtbug0" path="res://Assets/Materials/cube.tres" id="4_272bh"]
+[ext_resource type="Material" uid="uid://c82bisp5wlqau" path="res://Assets/Materials/energyball.tres" id="5_272bh"]
 [ext_resource type="ArrayMesh" uid="uid://bbgp4gg51mdsj" path="res://Assets/Meshes/bounceorb.obj" id="6_kek77"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
@@ -13,13 +13,7 @@ data = PackedVector3Array(-1.5632, 25, 0.3908, -1.5632, 8, 0.3908, -1.5632, 25, 
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oi4gx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
-albedo_texture = ExtResource("4_272bh")
-
 [sub_resource type="BoxMesh" id="BoxMesh_oi4gx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
-albedo_texture = ExtResource("5_5vw27")
 
 [sub_resource type="Environment" id="Environment_6g22i"]
 background_color = Color(1, 1, 1, 1)
@@ -82,12 +76,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4428928, 2.6575267, -2.151
 shape = SubResource("BoxShape3D_oi4gx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Interactables/RigidBody3D" unique_id=1868660225 groups=["Interactable", "ObjectCollision"]]
-material_override = SubResource("StandardMaterial3D_4c57u")
+material_override = ExtResource("4_272bh")
 mesh = SubResource("BoxMesh_oi4gx")
 
 [node name="Bounceorb" type="MeshInstance3D" parent="Map" unique_id=1956557058]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -6.347392, 1.0000002, 0.28925562)
-material_override = SubResource("StandardMaterial3D_efxa6")
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.347392, 1.0000002, 0.28925562)
+material_override = ExtResource("5_272bh")
 mesh = ExtResource("6_kek77")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1235593544]
