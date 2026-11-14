@@ -34,6 +34,16 @@ extends CharacterBody3D
 
 @export_file var interact_reticle
 
+@export_category("Holding Objects")
+@export var throwForce = 7.5
+@export var followSpeed = 5.0
+@export var followDistance = 2.5
+@export var maxDistanceFromCamera = 5.0
+@export var dropBelowPlayer = false
+@export var groundRay: RayCast3D
+
+var heldObject: RigidBody3D
+
 #endregion
 
 #region Nodes Export Group
@@ -187,6 +197,8 @@ func _physics_process(delta): # Most things happen here.
 	if not is_on_floor() and gravity and gravity_enabled:
 		velocity.y -= gravity * delta
 
+	handle_holding_objects()
+	
 	handle_jumping()
 
 	var input_dir = Vector2.ZERO
@@ -500,5 +512,36 @@ func handle_pausing():
 			Input.MOUSE_MODE_VISIBLE:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 				#get_tree().paused = false
+				
+func set_held_object(body: RigidBody3D):
+	if body is RigidBody3D:
+		heldObject = body
+
+func drop_held_object():
+	heldObject = null
+
+func throw_held_object():
+	var obj = heldObject
+	drop_held_object()
+	obj.apply_central_impulse(-CAMERA.global_transform.basis.z * throwForce * 10)
+
+func handle_holding_objects():
+	if Input.is_action_just_pressed("throw"):
+		if heldObject != null: throw_held_object()
+		
+	if Input.is_action_just_pressed("interact"):
+		if heldObject != null: drop_held_object()
+		elif RAYCAST.is_colliding() && RAYCAST.get_collider().is_in_group("Interactable"): set_held_object(RAYCAST.get_collider())
+		
+	if heldObject != null:
+		var targetPos = CAMERA.global_transform.origin + (CAMERA.global_basis * Vector3(0,0,-followDistance))
+		var objectPos = heldObject.global_transform.origin
+		heldObject.linear_velocity = (targetPos - objectPos) * followSpeed
+		
+		if heldObject.global_position.distance_to(CAMERA.global_position) >= maxDistanceFromCamera:
+			drop_held_object()
+			
+		if dropBelowPlayer && groundRay.is_colliding():
+			if groundRay.get_collider() == heldObject: drop_held_object()
 
 #endregion

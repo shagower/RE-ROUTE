@@ -379,14 +379,15 @@ MarginContainer/constants/margin_top = 10
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k4wwl"]
 
-[node name="Character" type="CharacterBody3D" unique_id=513471701 node_paths=PackedStringArray("HEAD", "CAMERA", "RAYCAST", "HEADBOB_ANIMATION", "JUMP_ANIMATION", "CROUCH_ANIMATION", "COLLISION_MESH")]
+[node name="Character" type="CharacterBody3D" unique_id=513471701 node_paths=PackedStringArray("groundRay", "HEAD", "CAMERA", "RAYCAST", "HEADBOB_ANIMATION", "JUMP_ANIMATION", "CROUCH_ANIMATION", "COLLISION_MESH")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_0t4e8")
 default_reticle = "res://addons/fpc/reticles/reticle_1.tscn"
 interact_reticle = "uid://3mij3cjhkwsm"
+groundRay = NodePath("GroundRay")
 HEAD = NodePath("Head")
 CAMERA = NodePath("Head/Camera")
-RAYCAST = NodePath("Head/Camera/RayCast3D")
+RAYCAST = NodePath("Head/Camera/InteractRay")
 HEADBOB_ANIMATION = NodePath("Head/HeadbobAnimation")
 JUMP_ANIMATION = NodePath("Head/JumpAnimation")
 CROUCH_ANIMATION = NodePath("CrouchAnimation")
@@ -409,7 +410,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=775628297]
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera" unique_id=821673819]
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera" unique_id=821673819]
 target_position = Vector3(0, 0, -5)
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=1783755395]
@@ -449,3 +450,6 @@ layout_mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_k4wwl")
 target_position = Vector3(0, 0.5, 0)
+
+[node name="GroundRay" type="RayCast3D" parent="." unique_id=1899156747]
+target_position = Vector3(0, -0.1, 0)
