@@ -23,15 +23,14 @@ shader = ExtResource("4_1bvp3")
 [node name="main" type="Node3D" unique_id=1945090909]
 
 [node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.3068674, 0)
-crouch_enabled = false
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 0, 1.3068674, 0)
 
 [node name="Map" type="Node3D" parent="." unique_id=718820290]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=771664980]
 environment = SubResource("Environment_6g22i")
 
-[node name="Testroomobj" type="MeshInstance3D" parent="." unique_id=509985249]
+[node name="Testroomobj" type="MeshInstance3D" parent="." unique_id=509985249 groups=["ObjectCollision", "PlayerCollision"]]
 material_override = ExtResource("2_h2yge")
 cast_shadow = 2
 gi_lightmap_texel_scale = 1.2967
