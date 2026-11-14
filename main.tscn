@@ -24,6 +24,7 @@ shader = ExtResource("4_1bvp3")
 
 [node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 0, 1.3068674, 0)
+default_reticle = "uid://3mij3cjhkwsm"
 
 [node name="Map" type="Node3D" parent="." unique_id=718820290]
 
