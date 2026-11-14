@@ -23,10 +23,11 @@ cast_shadow = 2
 use_collision = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/CSGBox3D" unique_id=1903306941]
-transform = Transform3D(0.062051073, 0, 0, 0, 1, 0, 0, 0, 0.03834046, 0, -1.5531406, 0)
+transform = Transform3D(0.034604356, 0, 0, 0, 1, 0, 0, 0, 0.03834046, 0, -3.336009, 0)
 light_energy = 5.277
 light_size = 3.0
 shadow_enabled = true
+omni_range = 18.673
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Map" unique_id=1664159484 groups=["PlayerCollision"]]
 transform = Transform3D(28.898096, 0, 0, 0, 1, 0, 0, 0, 26.082108, 0, 0, 0)
