@@ -28,6 +28,7 @@ enabled=PackedStringArray("res://addons/GodotTogether/plugin.cfg")
 
 PlayerCollision=""
 ObjectCollision=""
+Interactable=""
 
 [input]
 

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://coqpusufa8a6k"]
+[gd_scene format=3 uid="uid://coqpusufa8a6k"]
+
+[ext_resource type="Texture2D" uid="uid://c20brdasrh838" path="res://Assets/Asset Textures/UI Textures/cursoridle.png" id="1_umt3j"]
 
 [sub_resource type="GDScript" id="GDScript_10f85"]
 script/source = "extends CenterContainer
@@ -11,19 +13,10 @@ script/source = "extends CenterContainer
 @export_group(\"Settings\")
 @export var dot_size : int = 1
 @export var dot_color : Color = Color.WHITE
-
-
-func _process(_delta):
-	if visible: # If the reticle is disabled (not visible), don't bother updating it
-		update_reticle_settings()
-
-func update_reticle_settings():
-	$dot.scale.x = dot_size
-	$dot.scale.y = dot_size
-	$dot.color = dot_color
 "
 
-[node name="Reticle" type="CenterContainer"]
+[node name="Reticle" type="CenterContainer" unique_id=1062329268]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -33,5 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_10f85")
 
-[node name="dot" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=359659805]
+scale = Vector2(3.9663265, 3.9663265)
+texture = ExtResource("1_umt3j")
