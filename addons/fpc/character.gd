@@ -168,7 +168,7 @@ func _process(_delta):
 	if RAYCAST.is_colliding():
 		var hit_object = RAYCAST.get_collider()
 		if hit_object.is_in_group("Interactable"):
-			print(hit_object.get_path())
+		##	print(hit_object.get_path())
 			change_reticle(interact_reticle)
 		else:
 			change_reticle(default_reticle)

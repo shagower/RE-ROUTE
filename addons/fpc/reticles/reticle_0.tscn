@@ -27,5 +27,5 @@ grow_vertical = 2
 script = SubResource("GDScript_10f85")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=359659805]
-scale = Vector2(3.0063243, 3.0063243)
+scale = Vector2(3.9663265, 3.9663265)
 texture = ExtResource("1_umt3j")
