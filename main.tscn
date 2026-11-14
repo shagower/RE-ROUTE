@@ -4,8 +4,10 @@
 [ext_resource type="ArrayMesh" uid="uid://pisjodgsm2o7" path="res://addons/testroomobj.obj" id="2_0xm2m"]
 
 [sub_resource type="Environment" id="Environment_6g22i"]
+background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.0
 ambient_light_source = 1
+ambient_light_color = Color(0.47440344, 0.26106426, 0.23348269, 1)
 ambient_light_energy = 0.0
 reflected_light_source = 1
 ssil_sharpness = 1.0
@@ -41,5 +43,6 @@ omni_range = 172.546
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=2029512214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.744604, 0)
+light_energy = 2.841
 shadow_enabled = true
 omni_range = 172.546
