@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 const float jitter_amount = 0.1;
-const vec2 virtual_resolution = vec2(320.0, 240.0);
+const vec2 virtual_resolution = vec2(640.0, 480.0);
 
 uniform sampler2D screen_tex : hint_screen_texture;
 
