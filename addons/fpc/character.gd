@@ -32,6 +32,8 @@ extends CharacterBody3D
 ## The reticle file to import at runtime. By default are in res://addons/fpc/reticles/. Set to an empty string to remove.
 @export_file var default_reticle
 
+@export_file var interact_reticle
+
 #endregion
 
 #region Nodes Export Group
@@ -41,6 +43,8 @@ extends CharacterBody3D
 @export var HEAD : Node3D
 ## A reference to the camera for use in the character script.
 @export var CAMERA : Camera3D
+## A reference to the raycast used for object pickups
+@export var RAYCAST : RayCast3D
 ## A reference to the headbob animation for use in the character script.
 @export var HEADBOB_ANIMATION : AnimationPlayer
 ## A reference to the jump animation for use in the character script.
@@ -160,6 +164,18 @@ func _ready():
 func _process(_delta):
 	if pausing_enabled:
 		handle_pausing()
+		
+	if RAYCAST.is_colliding():
+		var hit_object = RAYCAST.get_collider()
+		if hit_object.is_in_group("Interactable"):
+			print(hit_object.get_path())
+			change_reticle(interact_reticle)
+		else:
+			change_reticle(default_reticle)
+	if not RAYCAST.is_colliding():
+		change_reticle(default_reticle)
+	
+	
 
 	update_debug_menu_per_frame()
 

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://3mij3cjhkwsm"]
+[gd_scene format=3 uid="uid://3mij3cjhkwsm"]
+
+[ext_resource type="Texture2D" uid="uid://cxwspsg151yoh" path="res://Assets/Asset Textures/UI Textures/cursorinteract.png" id="1_c1mco"]
 
 [sub_resource type="GDScript" id="GDScript_a8kpl"]
 script/source = "extends CenterContainer
@@ -25,26 +27,12 @@ script/source = "extends CenterContainer
 @export var line_distance : int = 5
 @export_enum(\"None\", \"Round\") var cap_mode : int = 0
 
-
-func _process(_delta):
-	if visible: # If the reticle is disabled (not visible), don't bother updating it
-		update_reticle_settings()
-
-	
-
-
-func update_reticle_settings():
-	# Dot
-	$dot.scale.x = dot_size
-	$dot.scale.y = dot_size
-	$dot.color = dot_color
-	
-	
 	# Please someone find a better way to do this
 	
 "
 
-[node name="Reticle" type="CenterContainer" node_paths=PackedStringArray("reticle_lines")]
+[node name="Reticle" type="CenterContainer" unique_id=981807088 node_paths=PackedStringArray("reticle_lines")]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -55,5 +43,6 @@ grow_vertical = 2
 script = SubResource("GDScript_a8kpl")
 reticle_lines = [null, null, null, null]
 
-[node name="dot" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203706732]
+scale = Vector2(3.1263232, 3.1263232)
+texture = ExtResource("1_c1mco")
