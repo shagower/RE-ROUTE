@@ -384,6 +384,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 script = ExtResource("1_0t4e8")
 default_reticle = "res://addons/fpc/reticles/reticle_1.tscn"
 interact_reticle = "uid://3mij3cjhkwsm"
+hold_reticle = "uid://j4alnlbf08av"
 groundRay = NodePath("GroundRay")
 HEAD = NodePath("Head")
 CAMERA = NodePath("Head/Camera")
