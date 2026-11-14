@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dw0e8qcxbm2ot"]
+
+[ext_resource type="Texture2D" uid="uid://dqm36en8oi2nr" path="res://Assets/Asset Textures/concretewall.png" id="1_g5ydt"]
+
+[resource]
+albedo_texture = ExtResource("1_g5ydt")
+ao_texture_channel = 3
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv2_triplanar = true
