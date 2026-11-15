@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cwevb1lpxn7g4"]
+[gd_scene format=3 uid="uid://yw248thkw734"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ehuit"]
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="2_5mrt3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="4_rwowx"]
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="5_hu44a"]
 [ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_hu44a"]
+[ext_resource type="PackedScene" uid="uid://cqnpthndb5iaf" path="res://Assets/Prefabs/cube.tscn" id="6_koko0"]
 [ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="7_0cr88"]
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="8_7vrqn"]
 [ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="9_bhfnd"]
@@ -313,6 +314,9 @@ E to pick up objects
 LMB to throw them
 remember this "
 autowrap_mode = 3
+
+[node name="RigidBody3D" parent="." unique_id=1381872648 instance=ExtResource("6_koko0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.84366, 0.5321135, -26.779554)
 
 [connection signal="triggered" from="orbmachine2" to="door" method="open"]
 [connection signal="pressed" from="Button" to="orbmachine" method="shoot"]
