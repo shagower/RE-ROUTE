@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="8_kek77"]
 [ext_resource type="AudioStream" uid="uid://dbiogbmgmx01w" path="res://Assets/Music/motorola hello.mp3" id="9_kek77"]
 [ext_resource type="Script" uid="uid://wbnavmdvt5b0" path="res://scripts/door.gd" id="9_ycdy4"]
-[ext_resource type="PackedScene" uid="uid://ss2qcnbjdkvg" path="res://Assets/Prefabs/orb.tscn" id="10_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_4c57u"]
 [ext_resource type="AudioStream" uid="uid://brqemm3drwjpm" path="res://Assets/SFX/Doors/doormove7.wav" id="10_vivmo"]
 [ext_resource type="AudioStream" uid="uid://cs52l3vcwymex" path="res://Assets/SFX/Doors/doorstop1.wav" id="11_2cqfq"]
@@ -100,13 +99,13 @@ omni_range = 17.173
 
 [node name="Interactables" type="Node3D" parent="Map" unique_id=1952223457]
 
-[node name="cube1" parent="Map/Interactables" unique_id=1381872648 instance=ExtResource("4_kek77")]
+[node name="cube1" parent="Map/Interactables" unique_id=1381872648 groups=["Reticle_Interact"] instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4428928, 2.6575267, -2.1511478)
 
-[node name="cube2" parent="Map/Interactables" unique_id=747316611 instance=ExtResource("4_kek77")]
+[node name="cube2" parent="Map/Interactables" unique_id=747316611 groups=["Reticle_Interact"] instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6465882, 4.012185, -2.1511478)
 
-[node name="cube3" parent="Map/Interactables" unique_id=1742869142 instance=ExtResource("4_kek77")]
+[node name="cube3" parent="Map/Interactables" unique_id=1742869142 groups=["Reticle_Interact"] instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9845077, 2.6575267, -2.1511478)
 
 [node name="door" type="MeshInstance3D" parent="Map" unique_id=1394102121]
@@ -125,9 +124,6 @@ stream = ExtResource("10_vivmo")
 
 [node name="Stop" type="AudioStreamPlayer3D" parent="Map/door" unique_id=1419961855]
 stream = ExtResource("11_2cqfq")
-
-[node name="Node3D" parent="Map" unique_id=721193093 instance=ExtResource("10_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7166362, 1.0402012, 4.762868)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1235593544]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 3.745, 0)

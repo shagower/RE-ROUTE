@@ -4,10 +4,16 @@
 [ext_resource type="Material" uid="uid://c82bisp5wlqau" path="res://Assets/Materials/energyball.tres" id="2_8v3oj"]
 [ext_resource type="ArrayMesh" uid="uid://bbgp4gg51mdsj" path="res://Assets/Meshes/bounceorb.obj" id="3_1cs1q"]
 
-[node name="Node3D" type="Node3D" unique_id=721193093]
+[sub_resource type="SphereShape3D" id="SphereShape3D_oi4gx"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1185296516]
 script = ExtResource("1_xwl3f")
 
-[node name="Bounceorb" type="MeshInstance3D" parent="." unique_id=723335293]
+[node name="Bounceorb" type="MeshInstance3D" parent="." unique_id=1458904019]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0, 0, 0)
 material_override = ExtResource("2_8v3oj")
 mesh = ExtResource("3_1cs1q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1543261143]
+transform = Transform3D(0.52, 0, 0, 0, 0.52, 0, 0, 0, 0.52, 0, 0, 0)
+shape = SubResource("SphereShape3D_oi4gx")

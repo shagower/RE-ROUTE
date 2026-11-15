@@ -23,7 +23,6 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0)
 [sub_resource type="Animation" id="Animation_i87e6"]
 resource_name = "shoot"
 length = 2.3333333
-loop_mode = 1
 tracks/0/type = "blend_shape"
 tracks/0/imported = false
 tracks/0/enabled = true
