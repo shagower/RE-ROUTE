@@ -33,6 +33,7 @@ player_raycast=""
 Reticle_Interact=""
 BouncePad=""
 Orb=""
+OrbReciever=""
 
 [input]
 

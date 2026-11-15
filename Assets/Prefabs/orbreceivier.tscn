@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://vn6iq2n628t5"]
+
+[ext_resource type="PackedScene" uid="uid://deh28b2tle5ew" path="res://Assets/Prefabs/orbmachine.glb" id="1_xwqfw"]
+[ext_resource type="Script" uid="uid://dmdd28gge7q5f" path="res://Assets/Prefabs/Scripts/orbreciever.gd" id="2_xwqfw"]
+[ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="3_garkj"]
+[ext_resource type="Material" uid="uid://d1tr4kebtbug0" path="res://Assets/Materials/cube.tres" id="4_gxfu4"]
+[ext_resource type="Material" uid="uid://be8pwyuwp8bjw" path="res://Assets/Materials/glowing.tres" id="5_jngwl"]
+[ext_resource type="AudioStream" uid="uid://vbd6sst8pcj8" path="res://Assets/SFX/Other/cguard_charging.wav" id="6_r2u3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_od41a"]
+grow_amount = -10.246
+
+[sub_resource type="Animation" id="Animation_sffxo"]
+length = 0.001
+tracks/0/type = "blend_shape"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_002:Key 1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0)
+tracks/1/type = "blend_shape"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_003:Key 1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0)
+
+[sub_resource type="Animation" id="Animation_i87e6"]
+resource_name = "shoot"
+length = 2.3333333
+tracks/0/type = "blend_shape"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_002:Key 1")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.53333336, 1, 1, 1.4, 1, 1, 1.6333333, 1, 0, 1.7666667, 1, -0.1, 1.9566667, 1, 0)
+tracks/1/type = "blend_shape"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_003:Key 1")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.6333333, 1, 1, 1.3999999, 1, 1, 1.6666666, 1, 0, 1.8, 1, -0.1, 2.2, 1, 0)
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fire"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1mgl1"]
+_data = {
+&"RESET": SubResource("Animation_sffxo"),
+&"shoot": SubResource("Animation_i87e6")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oi4gx"]
+size = Vector3(1, 2.1987915, 2.6785889)
+
+[node name="orbmachine" unique_id=1956023943 groups=["OrbReciever"] instance=ExtResource("1_xwqfw")]
+script = ExtResource("2_xwqfw")
+
+[node name="Cube" parent="." index="0" unique_id=621755792 groups=["OrbReciever"]]
+material_override = ExtResource("3_garkj")
+surface_material_override/0 = SubResource("StandardMaterial3D_od41a")
+
+[node name="Cube_002" parent="." index="1" unique_id=2015536712 groups=["OrbReciever"]]
+material_override = ExtResource("4_gxfu4")
+
+[node name="Cube_003" parent="." index="2" unique_id=1096098684 groups=["OrbReciever"]]
+visible = false
+material_override = ExtResource("4_gxfu4")
+
+[node name="Cube_004" parent="." index="3" unique_id=1503190620 groups=["OrbReciever"]]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+material_override = ExtResource("5_jngwl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=118194631 groups=["OrbReciever"]]
+libraries/ = SubResource("AnimationLibrary_1mgl1")
+
+[node name="charge" type="AudioStreamPlayer3D" parent="." index="5" unique_id=1238226489 groups=["OrbReciever"]]
+stream = ExtResource("6_r2u3m")
+
+[node name="Area3D" type="Area3D" parent="." index="6" unique_id=277484929 groups=["OrbReciever"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1943212527 groups=["OrbReciever"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8455478, 0, 0)
+shape = SubResource("BoxShape3D_oi4gx")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

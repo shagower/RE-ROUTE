@@ -4,9 +4,12 @@ var orb = preload("res://Assets/Prefabs/orb.tscn")
 
 var loadedorb: CharacterBody3D = null
 
+func shoot():
+	$AnimationPlayer.play("shoot")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.play("shoot")
+	shoot()
 
 func fire():
 	$charge.play()
@@ -22,7 +25,3 @@ func fire():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_button_2_pressed() -> void:
-	$AnimationPlayer.play("shoot") # Replace with function body.

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btvjnlwlhabsj"]
 
 [ext_resource type="Material" uid="uid://duh6ixvyd1iet" path="res://Assets/Materials/door.tres" id="1_43ty3"]
-[ext_resource type="Script" uid="uid://wbnavmdvt5b0" path="res://scripts/door.gd" id="2_wmma0"]
+[ext_resource type="Script" uid="uid://wbnavmdvt5b0" path="res://Assets/Prefabs/Scripts/door.gd" id="2_wmma0"]
 [ext_resource type="AudioStream" uid="uid://brqemm3drwjpm" path="res://Assets/SFX/Doors/doormove7.wav" id="3_mqsvv"]
 [ext_resource type="AudioStream" uid="uid://cs52l3vcwymex" path="res://Assets/SFX/Doors/doorstop1.wav" id="4_wqu8a"]
 

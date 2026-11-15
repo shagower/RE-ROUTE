@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="8_kek77"]
 [ext_resource type="AudioStream" uid="uid://dbiogbmgmx01w" path="res://Assets/Music/motorola hello.mp3" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="15_vivmo"]
 
@@ -146,5 +147,8 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 3.665908
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1721296, 2.28363, 0.01833272)
 opened_position = Vector3(-6.172, 6.8, 0.018)
 
+[node name="orbmachine2" parent="." unique_id=1723059168 instance=ExtResource("13_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0107136, 4.0841446, -0.15598273)
+
 [connection signal="pressed" from="Button" to="door" method="open"]
-[connection signal="pressed" from="Button2" to="orbmachine" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="orbmachine" method="shoot"]
