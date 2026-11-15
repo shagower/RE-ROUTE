@@ -5,11 +5,15 @@
 [ext_resource type="ArrayMesh" uid="uid://dnoujbsduwlb5" path="res://Assets/Meshes/buttonclick.obj" id="2_qcbul"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi4gx"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0.90571827, 0.30159566, 1.92523e-07, 1)
+emission_enabled = true
+emission = Color(1, 0.011764706, 0.05882353, 1)
+emission_energy_multiplier = 4.16
 
 [node name="Button" type="Node3D" unique_id=795097832]
 
 [node name="Base" type="MeshInstance3D" parent="." unique_id=405384403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001781106, 0.0045459867, 4.582107e-06)
 material_override = ExtResource("1_qcbul")
 mesh = ExtResource("1_esx78")
 
