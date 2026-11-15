@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bcjdhksq6js6g"]
+
+[ext_resource type="ArrayMesh" uid="uid://dh52gvqklkssr" path="res://Assets/Meshes/buttonbase.obj" id="1_esx78"]
+[ext_resource type="ArrayMesh" uid="uid://dnoujbsduwlb5" path="res://Assets/Meshes/buttonclick.obj" id="2_qcbul"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi4gx"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Button" type="Node3D" unique_id=795097832]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=405384403]
+mesh = ExtResource("1_esx78")
+
+[node name="Button" type="MeshInstance3D" parent="." unique_id=1454795844]
+mesh = ExtResource("2_qcbul")
+surface_material_override/0 = SubResource("StandardMaterial3D_oi4gx")
