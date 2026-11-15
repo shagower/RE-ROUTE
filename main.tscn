@@ -35,6 +35,7 @@ throwForce = 1.5
 [node name="Map" type="Node3D" parent="." unique_id=718820290]
 
 [node name="Testroomobj" type="MeshInstance3D" parent="Map" unique_id=509985249 groups=["ObjectCollision", "PlayerCollision"]]
+transform = Transform3D(1.0017856, 0, 0, 0, 1.0017856, 0, 0, 0, 1.0017856, 0, 0, 0)
 material_override = ExtResource("2_h2yge")
 cast_shadow = 2
 gi_lightmap_texel_scale = 1.2967
