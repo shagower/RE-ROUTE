@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://yw248thkw734"]
+[gd_scene format=3 uid="uid://cwevb1lpxn7g4"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ehuit"]
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="2_5mrt3"]

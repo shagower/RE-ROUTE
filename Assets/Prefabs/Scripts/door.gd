@@ -31,3 +31,7 @@ func open() -> void:
 	await tween.finished
 	$Slide.stop()
 	$Stop.play()
+
+
+func _on_orbmachine_triggered() -> void:
+	pass # Replace with function body.
