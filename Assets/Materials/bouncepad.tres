@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tqueyobpmejo"]
+
+[ext_resource type="Texture2D" uid="uid://dsgc5y01076pj" path="res://Assets/Asset Textures/Material Tetxures/hitpad.png" id="1_ilfnx"]
+
+[resource]
+albedo_texture = ExtResource("1_ilfnx")
+uv1_scale = Vector3(1.005, 1.005, 1.005)
+uv1_offset = Vector3(-0.5, 0.5, 0)
+uv1_triplanar = true
