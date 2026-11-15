@@ -6,13 +6,10 @@
 [ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cqnpthndb5iaf" path="res://Assets/Prefabs/cube.tscn" id="4_kek77"]
 [ext_resource type="Texture2D" uid="uid://jscy1b3vcetu" path="res://the_minnesota_grim_reaper.png" id="4_w48qg"]
-[ext_resource type="Material" uid="uid://duh6ixvyd1iet" path="res://Assets/Materials/door.tres" id="8_dg77c"]
+[ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_dg77c"]
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="8_kek77"]
 [ext_resource type="AudioStream" uid="uid://dbiogbmgmx01w" path="res://Assets/Music/motorola hello.mp3" id="9_kek77"]
-[ext_resource type="Script" uid="uid://wbnavmdvt5b0" path="res://scripts/door.gd" id="9_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_4c57u"]
-[ext_resource type="AudioStream" uid="uid://brqemm3drwjpm" path="res://Assets/SFX/Doors/doormove7.wav" id="10_vivmo"]
-[ext_resource type="AudioStream" uid="uid://cs52l3vcwymex" path="res://Assets/SFX/Doors/doorstop1.wav" id="11_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="15_vivmo"]
 
@@ -32,12 +29,6 @@ uv1_offset = Vector3(-0.155, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 size = Vector3(3.3774414, 4.713806, 0.2421875)
-
-[sub_resource type="BoxMesh" id="BoxMesh_oi4gx"]
-size = Vector3(0.28222656, 4.5672607, 3.1588745)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w48qg"]
-data = PackedVector3Array(-0.14109999, 2.2835999, 1.5794, 0.14109999, 2.2835999, 1.5794, -0.14109999, -2.2835999, 1.5794, 0.14109999, 2.2835999, 1.5794, 0.14109999, -2.2835999, 1.5794, -0.14109999, -2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, -0.14109999, 2.2835999, -1.5794, 0.14109999, -2.2835999, -1.5794, -0.14109999, 2.2835999, -1.5794, -0.14109999, -2.2835999, -1.5794, 0.14109999, -2.2835999, -1.5794, 0.14109999, 2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, 0.14109999, -2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, 0.14109999, -2.2835999, -1.5794, 0.14109999, -2.2835999, 1.5794, -0.14109999, 2.2835999, -1.5794, -0.14109999, 2.2835999, 1.5794, -0.14109999, -2.2835999, -1.5794, -0.14109999, 2.2835999, 1.5794, -0.14109999, -2.2835999, 1.5794, -0.14109999, -2.2835999, -1.5794, 0.14109999, 2.2835999, 1.5794, -0.14109999, 2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, -0.14109999, 2.2835999, 1.5794, -0.14109999, 2.2835999, -1.5794, 0.14109999, 2.2835999, -1.5794, -0.14109999, -2.2835999, 1.5794, 0.14109999, -2.2835999, 1.5794, -0.14109999, -2.2835999, -1.5794, 0.14109999, -2.2835999, 1.5794, 0.14109999, -2.2835999, -1.5794, -0.14109999, -2.2835999, -1.5794)
 
 [sub_resource type="Environment" id="Environment_6g22i"]
 background_color = Color(1, 1, 1, 1)
@@ -117,22 +108,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6465882, 3.431521, -3.2832
 [node name="cube3" parent="Map/Interactables" unique_id=1742869142 instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9845077, 2.0768626, -3.2832122)
 
-[node name="door" type="MeshInstance3D" parent="Map" unique_id=1394102121]
+[node name="door" parent="Map" unique_id=1001736140 instance=ExtResource("6_dg77c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3116493, 2.2616577, 0.024749756)
-material_override = ExtResource("8_dg77c")
-mesh = SubResource("BoxMesh_oi4gx")
-script = ExtResource("9_ycdy4")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/door" unique_id=2117174868]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/door/StaticBody3D" unique_id=1569590001]
-shape = SubResource("ConcavePolygonShape3D_w48qg")
-
-[node name="Slide" type="AudioStreamPlayer3D" parent="Map/door" unique_id=914189430]
-stream = ExtResource("10_vivmo")
-
-[node name="Stop" type="AudioStreamPlayer3D" parent="Map/door" unique_id=1419961855]
-stream = ExtResource("11_2cqfq")
+opened_position = Vector3(-6.312, 6.8, 0.025)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=771664980]
 environment = SubResource("Environment_6g22i")
@@ -168,5 +146,4 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1
 [node name="pad" parent="." unique_id=1243940725 instance=ExtResource("15_2cqfq")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 3.6659083, -1.775765)
 
-[connection signal="pressed" from="Button" to="Map/door" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="orbmachine" method="_on_button_2_pressed"]

@@ -1,19 +1,28 @@
 extends MeshInstance3D
 
+@export_category("Door")
+@export var opened_position: Vector3
+@export var tween_speed = 3
+@export var timeout_time = 1.5
+var closed_position
+
+func _ready() -> void:
+	closed_position = global_position
+
 func _on_button_pressed() -> void:
 	var tween = create_tween()
 	tween.set_ease(tween.EASE_IN)
-	tween.tween_property(self,"position",Vector3(-6.31,6.8,0.025),3)
+	tween.tween_property(self,"position",opened_position,tween_speed)
 	$Slide.play()
 	await tween.finished
 	print("finished")
 	tween.stop()
 	$Slide.stop()
 	$Stop.play()
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(timeout_time).timeout
 	print("i MIGHT be lowering idk")
 	tween.set_ease(tween.EASE_OUT)
-	tween.tween_property(self,"position",Vector3(-6.31,2.262,0.025),3)
+	tween.tween_property(self,"position",closed_position,tween_speed)
 	$Slide.play()
 	tween.play()
 	await tween.finished

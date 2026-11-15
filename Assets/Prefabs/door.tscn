@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://btvjnlwlhabsj"]
+
+[ext_resource type="Material" uid="uid://duh6ixvyd1iet" path="res://Assets/Materials/door.tres" id="1_43ty3"]
+[ext_resource type="Script" uid="uid://wbnavmdvt5b0" path="res://scripts/door.gd" id="2_wmma0"]
+[ext_resource type="AudioStream" uid="uid://brqemm3drwjpm" path="res://Assets/SFX/Doors/doormove7.wav" id="3_mqsvv"]
+[ext_resource type="AudioStream" uid="uid://cs52l3vcwymex" path="res://Assets/SFX/Doors/doorstop1.wav" id="4_wqu8a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oi4gx"]
+size = Vector3(0.28222656, 4.5672607, 3.1588745)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w48qg"]
+data = PackedVector3Array(-0.14109999, 2.2835999, 1.5794, 0.14109999, 2.2835999, 1.5794, -0.14109999, -2.2835999, 1.5794, 0.14109999, 2.2835999, 1.5794, 0.14109999, -2.2835999, 1.5794, -0.14109999, -2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, -0.14109999, 2.2835999, -1.5794, 0.14109999, -2.2835999, -1.5794, -0.14109999, 2.2835999, -1.5794, -0.14109999, -2.2835999, -1.5794, 0.14109999, -2.2835999, -1.5794, 0.14109999, 2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, 0.14109999, -2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, 0.14109999, -2.2835999, -1.5794, 0.14109999, -2.2835999, 1.5794, -0.14109999, 2.2835999, -1.5794, -0.14109999, 2.2835999, 1.5794, -0.14109999, -2.2835999, -1.5794, -0.14109999, 2.2835999, 1.5794, -0.14109999, -2.2835999, 1.5794, -0.14109999, -2.2835999, -1.5794, 0.14109999, 2.2835999, 1.5794, -0.14109999, 2.2835999, 1.5794, 0.14109999, 2.2835999, -1.5794, -0.14109999, 2.2835999, 1.5794, -0.14109999, 2.2835999, -1.5794, 0.14109999, 2.2835999, -1.5794, -0.14109999, -2.2835999, 1.5794, 0.14109999, -2.2835999, 1.5794, -0.14109999, -2.2835999, -1.5794, 0.14109999, -2.2835999, 1.5794, 0.14109999, -2.2835999, -1.5794, -0.14109999, -2.2835999, -1.5794)
+
+[node name="door" type="MeshInstance3D" unique_id=1001736140]
+material_override = ExtResource("1_43ty3")
+mesh = SubResource("BoxMesh_oi4gx")
+script = ExtResource("2_wmma0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1673521593]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=545381271]
+shape = SubResource("ConcavePolygonShape3D_w48qg")
+
+[node name="Slide" type="AudioStreamPlayer3D" parent="." unique_id=789219116]
+stream = ExtResource("3_mqsvv")
+
+[node name="Stop" type="AudioStreamPlayer3D" parent="." unique_id=1699295114]
+stream = ExtResource("4_wqu8a")
