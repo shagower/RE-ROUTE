@@ -1,13 +1,19 @@
-extends MeshInstance3D
+extends Node3D
 
-
+var camera
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	camera = get_viewport().get_camera_3d()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var camera = get_viewport().get_camera_3d()
-	look_at(camera.global_transform.origin - Vector3.UP)
+func _process(_delta):
+	var target: Vector3 = camera.global_transform.origin
+	var direction = (target - global_transform.origin).normalized()
+	
+	var up := Vector3.UP
+	if abs(direction.dot(Vector3.UP)) > 0.99:
+		up = Vector3.BACK  # or Vector3.FORWARD — anything not parallel
+	
+	look_at(target, up)
 	
