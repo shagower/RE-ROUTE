@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ddn5psgsmgkkj"]
+
+[ext_resource type="Script" uid="uid://dcihonbt58fj3" path="res://Assets/Prefabs/Scripts/bounce_pad.gd" id="1_hqe6q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcrs7"]
+size = Vector3(1, 1, 0.234375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oi4gx"]
+size = Vector3(1, 1, 0.24572754)
+
+[node name="BouncePad" type="Area3D" unique_id=1966357903 groups=["BouncePad"]]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0)
+script = ExtResource("1_hqe6q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=24010834 groups=["BouncePad"]]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_fcrs7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=828721477 groups=["BouncePad"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0026245117)
+shape = SubResource("BoxShape3D_oi4gx")
