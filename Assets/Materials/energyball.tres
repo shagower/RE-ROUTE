@@ -4,8 +4,13 @@
 
 [resource]
 transparency = 1
-shading_mode = 0
+shading_mode = 2
 diffuse_mode = 3
 albedo_texture = ExtResource("1_dxym5")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 6.08
+heightmap_scale = 15.755
 uv1_scale = Vector3(1.5, 1.5, 1.5)
 uv1_offset = Vector3(0.745, 0.745, 0.745)
+grow_amount = 3.175

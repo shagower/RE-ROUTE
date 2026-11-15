@@ -9,6 +9,8 @@ func _ready() -> void:
 	$AnimationPlayer.play("shoot")
 
 func fire():
+	$charge.play()
+	await get_tree().create_timer(1).timeout
 	if loadedorb: loadedorb.queue_free()
 	loadedorb = orb.instantiate()
 	get_tree().current_scene.add_child(loadedorb)
