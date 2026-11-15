@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RE-ROUTE"
-run/main_scene="uid://b8j58yi4nxl7h"
+run/main_scene="uid://cwevb1lpxn7g4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
