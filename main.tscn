@@ -165,8 +165,8 @@ transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08
 [node name="Button2" parent="." unique_id=1085458486 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1509426, 0.0003838539, 5.2233095)
 
-[node name="BouncePad" parent="." unique_id=1966357903 instance=ExtResource("15_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 3.5856345, 0.3828125)
+[node name="BouncePad" parent="." unique_id=1966357903 groups=["ObjectCollision", "PlayerCollision"] instance=ExtResource("15_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.03603697, 3.7085183, -1.3599758)
 
 [connection signal="pressed" from="Button" to="Map/door" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="orbmachine" method="_on_button_2_pressed"]

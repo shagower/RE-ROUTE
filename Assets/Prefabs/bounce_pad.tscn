@@ -2,32 +2,21 @@
 
 [ext_resource type="Script" uid="uid://dcihonbt58fj3" path="res://Assets/Prefabs/Scripts/bounce_pad.gd" id="1_hqe6q"]
 [ext_resource type="Material" uid="uid://tqueyobpmejo" path="res://Assets/Materials/bouncepad.tres" id="2_bs1ti"]
-[ext_resource type="Script" uid="uid://botrwft07418o" path="res://rotatepart.gd" id="3_ptibe"]
-[ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="4_hjih1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oi4gx"]
 size = Vector3(2.634491, 3.2416687, 0.24572754)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uf1ln"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_rufcw"]
-size = Vector3(1, 1.5375977, 2.8935547)
-
-[node name="BouncePad" type="Area3D" unique_id=1966357903 groups=["BouncePad"]]
+[node name="BouncePad" type="Area3D" unique_id=1966357903 groups=["BouncePad", "Reticle_Interact"]]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_hqe6q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=828721477 groups=["BouncePad"]]
-transform = Transform3D(1, 0, 0, 0, 0.9999904, 0, 0, 0, 0.9999904, 0.027008057, 0.029206512, -0.0026245099)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=828721477 groups=["BouncePad", "Reticle_Interact"]]
+transform = Transform3D(1, 0, 0, 0, 0.9999903, 0, 0, 0, 0.9999903, 0, 0, 0)
 shape = SubResource("BoxShape3D_oi4gx")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1899185543]
-transform = Transform3D(2.6, 0, 0, 0, 3.1999986, 0, 0, 0, 0.09999992, 0, 0, 0)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1899185543 groups=["BouncePad", "Reticle_Interact"]]
+transform = Transform3D(2.6, 0, 0, 0, 3.199998, 0, 0, 0, 0.0999999, 0, 0, 0)
 material_override = ExtResource("2_bs1ti")
 mesh = SubResource("BoxMesh_uf1ln")
-script = ExtResource("3_ptibe")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D2" unique_id=412022247]
-transform = Transform3D(0.048223373, 0, 0, 0, 1, 0, 0, 0, 0.22902773, 0, -0.3062787, -0.03489685)
-material_override = ExtResource("4_hjih1")
-mesh = SubResource("BoxMesh_rufcw")
