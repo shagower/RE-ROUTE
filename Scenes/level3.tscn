@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_d77hw"]
 [ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="2_jaajx"]
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="3_mrxql"]
+[ext_resource type="ArrayMesh" uid="uid://daowb7dvfltv8" path="res://Assets/Meshes/LEVKel3.obj" id="4_d77hw"]
 
 [sub_resource type="Environment" id="Environment_4iphx"]
 background_color = Color(1, 1, 1, 1)
@@ -37,3 +38,6 @@ mouse_filter = 2
 position = Vector2(109.34374, 28.5)
 scale = Vector2(1.6562499, 1.65625)
 texture = ExtResource("3_mrxql")
+
+[node name="LevKel3" type="MeshInstance3D" parent="." unique_id=1644478781]
+mesh = ExtResource("4_d77hw")
