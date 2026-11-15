@@ -295,6 +295,16 @@ mesh = SubResource("PrismMesh_od41a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=92503665]
 shape = SubResource("ConcavePolygonShape3D_rqhku")
 
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=749657187]
+transform = Transform3D(-7.0198746, 0, -4.7985304e-07, 0, 3.1998773, 0, 6.136969e-07, 0, -5.4888787, 4.0067186, 1.4812853, 8.726777)
+material_override = ExtResource("1_2a60c")
+mesh = SubResource("PrismMesh_od41a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D8" unique_id=990053221]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D8/StaticBody3D" unique_id=68589458]
+shape = SubResource("ConcavePolygonShape3D_rqhku")
+
 [node name="orbmachine" parent="." unique_id=1956023943 instance=ExtResource("8_bs12r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.207588, 9.216399, -0.15792084)
 
