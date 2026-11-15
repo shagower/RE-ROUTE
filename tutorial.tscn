@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="4_rwowx"]
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="5_hu44a"]
 [ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_hu44a"]
+[ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="7_0cr88"]
 
 [sub_resource type="Environment" id="Environment_hu44a"]
 background_color = Color(1, 1, 1, 1)
@@ -27,6 +28,12 @@ size = Vector3(1, 6.529724, 1.7194824)
 
 [sub_resource type="BoxMesh" id="BoxMesh_od41a"]
 size = Vector3(1, 1.8272462, 3.1000001)
+
+[sub_resource type="BoxMesh" id="BoxMesh_urht8"]
+size = Vector3(1, 3.4051514, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cr88"]
+size = Vector3(1, 3.4051514, 1)
 
 [node name="Tutorial" type="Node3D" unique_id=168769492]
 
@@ -58,20 +65,22 @@ shadow_blur = 0.0
 omni_range = 17.173
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=960115846]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.842382, 8.253664, 2.640747)
-light_color = Color(0.9137255, 1, 0.9098039, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.842382, 8.35791, 2.640747)
+light_color = Color(0.96862745, 1, 0.9098039, 1)
 light_energy = 7.984
 shadow_enabled = true
 shadow_blur = 0.0
 omni_range = 24.69
+omni_attenuation = 1.158
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=675327142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.842382, 8.253664, -23.809885)
-light_color = Color(0.9137255, 1, 0.9098039, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.842382, 8.35791, -23.809885)
+light_color = Color(0.96862745, 1, 0.9098039, 1)
 light_energy = 7.984
 shadow_enabled = true
 shadow_blur = 0.0
 omni_range = 24.69
+omni_attenuation = 1.158
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=250081514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6885276, 28.146511, 0)
@@ -113,3 +122,16 @@ mesh = SubResource("BoxMesh_od41a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.851423, 3.1678035, -24.634151)
 material_override = ExtResource("2_5mrt3")
 mesh = SubResource("BoxMesh_menua")
+
+[node name="Node3D" parent="." unique_id=1243940725 instance=ExtResource("7_0cr88")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 28, 5, -12)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=2053809619]
+transform = Transform3D(0.20025957, 0, 0, 0, 1, 0, 0, 0, 0.21025413, 28, 1.7025757, -12)
+material_override = ExtResource("2_5mrt3")
+mesh = SubResource("BoxMesh_urht8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=720494360]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1622816281]
+shape = SubResource("BoxShape3D_0cr88")
