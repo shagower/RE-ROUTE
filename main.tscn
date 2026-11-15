@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://6oq7x174pjbk"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
+[ext_resource type="ArrayMesh" uid="uid://pisjodgsm2o7" path="res://addons/testroomobj.obj" id="2_0xm2m"]
+[ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="2_h2yge"]
+[ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cqnpthndb5iaf" path="res://Assets/Prefabs/cube.tscn" id="4_kek77"]
+[ext_resource type="Texture2D" uid="uid://jscy1b3vcetu" path="res://the_minnesota_grim_reaper.png" id="4_w48qg"]
+[ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_dg77c"]
+[ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="8_kek77"]
+[ext_resource type="AudioStream" uid="uid://dbiogbmgmx01w" path="res://Assets/Music/motorola hello.mp3" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="15_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="15_vivmo"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
+data = PackedVector3Array(-1.5632, 25, 0.3908, -1.5632, 8, 0.3908, -1.5632, 25, 1.5632, -1.5632, 25, 1.5632, -1.5632, 8, 0.3908, -1.5632, 8, 1.5632, -1.5632, 25, 0.3908, -1.5632, 8, 0, -1.5632, 8, 0.3908, -1.5632, 25, 0, -1.5632, 8, 0, -1.5632, 25, 0.3908, -1.5632, 25, 0, -1.5632, 8, -0.3908, -1.5632, 8, 0, -1.5632, 25, -0.3908, -1.5632, 8, -0.3908, -1.5632, 25, 0, -1.5632, 25, -0.3908, -1.5632, 8, -1.5632, -1.5632, 8, -0.3908, -1.5632, 25, -1.5632, -1.5632, 8, -1.5632, -1.5632, 25, -0.3908, -6, 4.5, 6, 6, 4.5, 6, -6, 8, 6, -6, 8, 6, 6, 4.5, 6, 6, 8, 6, -6, 4.5, 6, 6, 0, 6, 6, 4.5, 6, -6, 0, 6, 6, 0, 6, -6, 4.5, 6, -6, 4.5, -6, -6, 4.5, -1.5, -6, 8, -6, -6, 8, -6, -6, 4.5, -1.5, -6, 8, -1.5, -6, 4.5, -6, -6, 0, -1.5, -6, 4.5, -1.5, -6, 0, -6, -6, 0, -1.5, -6, 4.5, -6, -6, 0, 6, -6, 0, 1.5, 6, 0, 6, 6, 0, 6, -6, 0, 1.5, 6, 0, 1.5, 6, 4.5, 6, 6, 4.5, 1.5, 6, 8, 6, 6, 8, 6, 6, 4.5, 1.5, 6, 8, 1.5, 6, 4.5, 6, 6, 0, 1.5, 6, 4.5, 1.5, 6, 0, 6, 6, 0, 1.5, 6, 4.5, 6, 6, 4.5, -6, -6, 4.5, -6, 6, 8, -6, 6, 8, -6, -6, 4.5, -6, -6, 8, -6, 6, 4.5, -6, -6, 0, -6, -6, 4.5, -6, 6, 0, -6, -6, 0, -6, 6, 4.5, -6, 6, 8, 6, 1.5632, 8, 1.5632, -6, 8, 6, -6, 8, 6, 1.5632, 8, 1.5632, -1.5632, 8, 1.5632, 6, 8, 6, 1.5632, 8, 0.3908, 1.5632, 8, 1.5632, -6, 8, 6, -1.5632, 8, 1.5632, -6, 8, 1.5, 6, 8, 1.5, 1.5632, 8, 0.3908, 6, 8, 6, -6, 8, 1.5, -1.5632, 8, 1.5632, -1.5632, 8, 0.3908, 6, 8, 1.5, 1.5632, 8, 0, 1.5632, 8, 0.3908, -6, 8, 1.5, -1.5632, 8, 0.3908, -6, 8, 0, 6, 8, 0, 1.5632, 8, 0, 6, 8, 1.5, -6, 8, 0, -1.5632, 8, 0.3908, -1.5632, 8, 0, 6, 8, 0, 1.5632, 8, -0.3908, 1.5632, 8, 0, -6, 8, 0, -1.5632, 8, 0, -6, 8, -1.5, 6, 8, -1.5, 1.5632, 8, -0.3908, 6, 8, 0, -6, 8, -1.5, -1.5632, 8, 0, -1.5632, 8, -0.3908, 6, 8, -1.5, 1.5632, 8, -1.5632, 1.5632, 8, -0.3908, -6, 8, -1.5, -1.5632, 8, -0.3908, -6, 8, -6, 6, 8, -6, 1.5632, 8, -1.5632, 6, 8, -1.5, -6, 8, -6, -1.5632, 8, -0.3908, -1.5632, 8, -1.5632, 6, 8, -6, -1.5632, 8, -1.5632, 1.5632, 8, -1.5632, -6, 8, -6, -1.5632, 8, -1.5632, 6, 8, -6, 1.5632, 25, 1.5632, 1.5632, 25, 0.3908, -1.5632, 25, 1.5632, -1.5632, 25, 1.5632, 1.5632, 25, 0.3908, -1.5632, 25, 0.3908, -1.5632, 25, 1.5632, -1.5632, 8, 1.5632, 1.5632, 25, 1.5632, 1.5632, 25, 1.5632, -1.5632, 8, 1.5632, 1.5632, 8, 1.5632, 1.5632, 25, -1.5632, 1.5632, 8, -1.5632, -1.5632, 25, -1.5632, -1.5632, 25, -1.5632, 1.5632, 8, -1.5632, -1.5632, 8, -1.5632, 1.5632, 25, -0.3908, 1.5632, 8, -0.3908, 1.5632, 25, -1.5632, 1.5632, 25, -1.5632, 1.5632, 8, -0.3908, 1.5632, 8, -1.5632, 1.5632, 25, -0.3908, 1.5632, 8, 0, 1.5632, 8, -0.3908, 1.5632, 25, 0, 1.5632, 8, 0, 1.5632, 25, -0.3908, 1.5632, 25, 0, 1.5632, 8, 0.3908, 1.5632, 8, 0, 1.5632, 25, 0.3908, 1.5632, 8, 0.3908, 1.5632, 25, 0, 1.5632, 25, 0.3908, 1.5632, 8, 1.5632, 1.5632, 8, 0.3908, 1.5632, 25, 1.5632, 1.5632, 8, 1.5632, 1.5632, 25, 0.3908, 1.5632, 25, 0, 1.5632, 25, -0.3908, -1.5632, 25, 0, -1.5632, 25, 0, 1.5632, 25, -0.3908, -1.5632, 25, -0.3908, 6, 4.5, 0, 6, 4.5, -1.5, 6, 8, 0, 6, 8, 0, 6, 4.5, -1.5, 6, 8, -1.5, 6, 4.5, 0, 6, 0, -1.5, 6, 4.5, -1.5, 6, 0, 0, 6, 0, -1.5, 6, 4.5, 0, -6, 0, 0, -6, 0, -1.5, 6, 0, 0, 6, 0, 0, -6, 0, -1.5, 6, 0, -1.5, -6, 4.5, 0, -6, 4.5, 1.5, -6, 8, 0, -6, 8, 0, -6, 4.5, 1.5, -6, 8, 1.5, -6, 4.5, 1.5, -6, 4.5, 6, -6, 8, 1.5, -6, 8, 1.5, -6, 4.5, 6, -6, 8, 6, -6, 4.5, 1.5, -6, 0, 6, -6, 4.5, 6, -6, 0, 1.5, -6, 0, 6, -6, 4.5, 1.5, 1.5632, 25, 0.3908, 1.5632, 25, 0, -1.5632, 25, 0.3908, -1.5632, 25, 0.3908, 1.5632, 25, 0, -1.5632, 25, 0, 6, 4.5, 1.5, 6, 4.5, 0, 6, 8, 1.5, 6, 8, 1.5, 6, 4.5, 0, 6, 8, 0, 6, 4.5, 1.5, 6, 0, 0, 6, 4.5, 0, 6, 0, 1.5, 6, 0, 0, 6, 4.5, 1.5, -6, 0, 1.5, -6, 0, 0, 6, 0, 1.5, 6, 0, 1.5, -6, 0, 0, 6, 0, 0, -6, 0, -1.5, -6, 0, -6, 6, 0, -1.5, 6, 0, -1.5, -6, 0, -6, 6, 0, -6, 6, 4.5, -1.5, 6, 4.5, -6, 6, 8, -1.5, 6, 8, -1.5, 6, 4.5, -6, 6, 8, -6, 6, 4.5, -1.5, 6, 0, -6, 6, 4.5, -6, 6, 0, -1.5, 6, 0, -6, 6, 4.5, -1.5, 1.5632, 25, -0.3908, 1.5632, 25, -1.5632, -1.5632, 25, -0.3908, -1.5632, 25, -0.3908, 1.5632, 25, -1.5632, -1.5632, 25, -1.5632, -6, 4.5, -1.5, -6, 4.5, 0, -6, 8, -1.5, -6, 8, -1.5, -6, 4.5, 0, -6, 8, 0, -20, 0, -1.5, -6, 0, -1.5, -20, 0, 0, -20, 0, 0, -6, 0, -1.5, -6, 0, 0, -20, 0, -12, -20, 0, -1.5, -40, 0, -12, -40, 0, -12, -20, 0, -1.5, -40, 0, -1.5, -40, 0, -1.5, -20, 0, -1.5, -40, 0, 0, -40, 0, 0, -20, 0, -1.5, -20, 0, 0, -40, 0, 0, -20, 0, 0, -40, 0, 1.5, -20, 0, 0, -6, 0, 0, -20, 0, 1.5, -40, 0, 1.5, -20, 0, 0, -20, 0, 1.5, -20, 0, 1.5, -6, 0, 0, -6, 0, 1.5, -20, 0, 12, -40, 0, 1.5, -20, 0, 1.5, -40, 0, 12, -40, 0, 1.5, -20, 0, 12, -20, 0, 1.5, -6, 0, 1.5, -20, 4.5, 1.5, -20, 4.5, 1.5, -6, 0, 1.5, -6, 4.5, 1.5, -40, 4.5, 12, -40, 4.5, 1.5, -40, 0, 12, -40, 0, 12, -40, 4.5, 1.5, -40, 0, 1.5, -40, 8.5, 12, -40, 4.5, 1.5, -40, 4.5, 12, -40, 8.5, 1.5, -40, 4.5, 1.5, -40, 8.5, 12, -40, 8.5, 1.5, -40, 4.5, 0, -40, 4.5, 1.5, -40, 8.5, 0, -40, 4.5, 0, -40, 8.5, 1.5, -40, 8.5, 0, -40, 4.5, -1.5, -40, 4.5, 0, -40, 8.5, -1.5, -40, 4.5, -1.5, -40, 8.5, 0, -40, 8.5, -1.5, -40, 4.5, -12, -40, 4.5, -1.5, -40, 8.5, -12, -40, 4.5, -12, -40, 8.5, -1.5, -40, 4.5, -12, -40, 0, -1.5, -40, 4.5, -1.5, -40, 0, -12, -40, 0, -1.5, -40, 4.5, -12, -20, 8.5, 0, -20, 4.5, 0, -20, 8.5, -1.5, -20, 8.5, 0, -20, 4.5, 1.5, -20, 4.5, 0, -20, 8.5, -1.5, -20, 4.5, 0, -20, 4.5, -1.5, -20, 8.5, 1.5, -20, 4.5, 1.5, -20, 8.5, 0, -20, 8.5, -1.5, -20, 4.5, -1.5, -20, 8.5, -12, -20, 8.5, -12, -20, 4.5, -1.5, -20, 4.5, -12, -20, 4.5, -12, -20, 4.5, -1.5, -20, 0, -12, -20, 0, -12, -20, 4.5, -1.5, -20, 0, -1.5, -20, 8.5, 1.5, -20, 4.5, 12, -20, 4.5, 1.5, -20, 8.5, 12, -20, 4.5, 12, -20, 8.5, 1.5, -20, 4.5, 12, -20, 0, 1.5, -20, 4.5, 1.5, -20, 0, 12, -20, 0, 1.5, -20, 4.5, 12, -20, 4.5, 1.5, -6, 4.5, 1.5, -20, 4.5, 0, -20, 4.5, 0, -6, 4.5, 1.5, -6, 4.5, 0, -20, 4.5, 0, -6, 4.5, 0, -20, 4.5, -1.5, -20, 4.5, -1.5, -6, 4.5, 0, -6, 4.5, -1.5, -20, 4.5, -1.5, -6, 4.5, -1.5, -20, 0, -1.5, -20, 0, -1.5, -6, 4.5, -1.5, -6, 0, -1.5, -40, 0, -1.5, -40, 0, 0, -40, 4.5, -1.5, -40, 4.5, -1.5, -40, 0, 0, -40, 4.5, 0, -40, 0, 0, -40, 0, 1.5, -40, 4.5, 0, -40, 4.5, 0, -40, 0, 1.5, -40, 4.5, 1.5, -40, 4.5, -12, -20, 4.5, -12, -40, 0, -12, -40, 0, -12, -20, 4.5, -12, -20, 0, -12, -40, 8.5, -12, -20, 4.5, -12, -40, 4.5, -12, -20, 8.5, -12, -20, 4.5, -12, -40, 8.5, -12, -40, 0, 12, -20, 0, 12, -40, 4.5, 12, -40, 4.5, 12, -20, 0, 12, -20, 4.5, 12, -20, 8.5, 12, -40, 4.5, 12, -20, 4.5, 12, -40, 8.5, 12, -40, 4.5, 12, -20, 8.5, 12, -40, 8.5, 1.5, -20, 8.5, 1.5, -40, 8.5, 0, -40, 8.5, 12, -20, 8.5, 1.5, -40, 8.5, 1.5, -20, 8.5, 12, -20, 8.5, 1.5, -40, 8.5, 12, -40, 8.5, 0, -20, 8.5, 1.5, -20, 8.5, 0, -40, 8.5, 0, -20, 8.5, 0, -40, 8.5, -1.5, -40, 8.5, -1.5, -20, 8.5, 0, -20, 8.5, -1.5, -20, 8.5, -12, -40, 8.5, -1.5, -20, 8.5, -1.5, -40, 8.5, -12, -40, 8.5, -1.5, -20, 8.5, -12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yaehf"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.08627451)
+albedo_texture = ExtResource("4_w48qg")
+metallic_specular = 1.0
+heightmap_enabled = true
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(-0.155, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(3.3774414, 4.713806, 0.2421875)
+
+[sub_resource type="Environment" id="Environment_6g22i"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_color = Color(0.47440344, 0.26106426, 0.23348269, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 1
+ssil_sharpness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oi4gx"]
+shader = ExtResource("4_1bvp3")
+
+[node name="main" type="Node3D" unique_id=1945090909]
+
+[node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 0, 1.3068674, 0)
+
+[node name="Map" type="Node3D" parent="." unique_id=718820290]
+
+[node name="Testroomobj" type="MeshInstance3D" parent="Map" unique_id=509985249 groups=["ObjectCollision", "PlayerCollision"]]
+transform = Transform3D(1.0017856, 0, 0, 0, 1.0017856, 0, 0, 0, 1.0017856, 0, 0, 0)
+material_override = ExtResource("2_h2yge")
+cast_shadow = 2
+gi_lightmap_texel_scale = 1.2967
+mesh = ExtResource("2_0xm2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Testroomobj" unique_id=1617769141]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Testroomobj/StaticBody3D" unique_id=430888803]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_0xm2m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Testroomobj" unique_id=129308528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.568533, 2.4820073, 12.113054)
+material_override = SubResource("StandardMaterial3D_yaehf")
+cast_shadow = 0
+ignore_occlusion_culling = true
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Lights" type="Node3D" parent="Map" unique_id=148095523]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Lights" unique_id=656250242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.637451, 0)
+light_color = Color(0.93333334, 1, 0.93333334, 1)
+light_energy = 26.433
+light_indirect_energy = 1.04
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_range = 172.546
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Map/Lights/OmniLight3D" unique_id=2029512214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.892847, 0)
+light_color = Color(0.9137255, 1, 0.9098039, 1)
+light_energy = 2.841
+shadow_enabled = true
+shadow_reverse_cull_face = true
+shadow_blur = 0.0
+omni_range = 17.173
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Map/Lights" unique_id=1235593544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 3.745, 0)
+light_color = Color(0.83137256, 0.9372549, 0.9098039, 1)
+light_energy = 2.841
+shadow_enabled = true
+shadow_blur = 0.0
+omni_range = 20.868
+
+[node name="Interactables" type="Node3D" parent="Map" unique_id=1952223457]
+
+[node name="cube1" parent="Map/Interactables" unique_id=1381872648 instance=ExtResource("4_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4428928, 2.0768626, -3.2832122)
+
+[node name="cube2" parent="Map/Interactables" unique_id=747316611 instance=ExtResource("4_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6465882, 3.431521, -3.2832122)
+
+[node name="cube3" parent="Map/Interactables" unique_id=1742869142 instance=ExtResource("4_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9845077, 2.0768626, -3.2832122)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=771664980]
+environment = SubResource("Environment_6g22i")
+
+[node name="Shader" type="CanvasLayer" parent="." unique_id=1484718534]
+
+[node name="ColorRect" type="ColorRect" parent="Shader" unique_id=1859138704]
+texture_filter = 1
+material = SubResource("ShaderMaterial_oi4gx")
+offset_right = 1157.5
+offset_bottom = 652.0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Shader" unique_id=487019448]
+position = Vector2(109.34374, 28.5)
+scale = Vector2(1.6562499, 1.65625)
+texture = ExtResource("8_kek77")
+
+[node name="Background Audio" type="AudioStreamPlayer3D" parent="." unique_id=887911302]
+stream = ExtResource("9_kek77")
+autoplay = true
+parameters/looping = true
+
+[node name="Button" parent="." unique_id=795097832 instance=ExtResource("10_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4654117, 0, 2.2639318)
+
+[node name="orbmachine" parent="." unique_id=1956023943 instance=ExtResource("15_vivmo")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, 0, 3.5035734, 6)
+
+[node name="Button2" parent="." unique_id=1085458486 instance=ExtResource("10_4c57u")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1509426, 0.0003838539, 5.2233095)
+
+[node name="pad" parent="." unique_id=1243940725 instance=ExtResource("15_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 3.6659083, -1.775765)
+
+[node name="door" parent="." unique_id=1001736140 instance=ExtResource("6_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1721296, 2.28363, 0.01833272)
+opened_position = Vector3(-6.172, 6.8, 0.018)
+
+[node name="orbmachine2" parent="." unique_id=1723059168 instance=ExtResource("13_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0053797, 3.7800117, -1.6464367)
+
+[connection signal="pressed" from="Button" to="door" method="open"]
+[connection signal="pressed" from="Button2" to="orbmachine" method="shoot"]

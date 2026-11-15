@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="5_hu44a"]
 [ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_hu44a"]
 [ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="7_0cr88"]
+[ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="8_7vrqn"]
+[ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="9_bhfnd"]
+[ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_bhfnd"]
 
 [sub_resource type="Environment" id="Environment_hu44a"]
 background_color = Color(1, 1, 1, 1)
@@ -107,6 +110,7 @@ texture = ExtResource("5_hu44a")
 
 [node name="door" parent="." unique_id=1001736140 instance=ExtResource("6_hu44a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.85131, 2.2514625, -22.196432)
+opened_position = Vector3(17.851, 4.5, -22.196)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=442134473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.851423, 3.1678035, -19.816284)
@@ -135,3 +139,15 @@ mesh = SubResource("BoxMesh_urht8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1622816281]
 shape = SubResource("BoxShape3D_0cr88")
+
+[node name="orbmachine" parent="." unique_id=1956023943 instance=ExtResource("8_7vrqn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 27.994236, 5.4992013, 12.687323)
+
+[node name="orbmachine2" parent="." unique_id=1703671077 instance=ExtResource("9_bhfnd")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 19.073034, 5.494775, -12.036498)
+
+[node name="Button" parent="." unique_id=795097832 instance=ExtResource("10_bhfnd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28, 0, 8)
+
+[connection signal="triggered" from="orbmachine2" to="door" method="open"]
+[connection signal="pressed" from="Button" to="orbmachine" method="shoot"]

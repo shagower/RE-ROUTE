@@ -8,8 +8,6 @@ func shoot():
 	$AnimationPlayer.play("shoot")
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	shoot()
 
 func fire():
 	$charge.play()
