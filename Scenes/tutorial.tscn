@@ -156,6 +156,7 @@ scale = Vector2(1.6562499, 1.65625)
 texture = ExtResource("5_hu44a")
 
 [node name="Label" type="Label" parent="Shader" unique_id=40448953]
+visible = false
 offset_left = 45.0
 offset_top = 79.0
 offset_right = 157.0
@@ -221,6 +222,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28, 
 
 [node name="Node3D2" parent="." unique_id=423665905 instance=ExtResource("12_8mnmb")]
 transform = Transform3D(1, 0, 0, 0, 77.162735, 0, 0, 0, 9.986439, 13.06771, 1.7943368, -22.512735)
+target_scene = "uid://b1qum60a2jijp"
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1267481193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.437866, 12.6083, -30.034332)
