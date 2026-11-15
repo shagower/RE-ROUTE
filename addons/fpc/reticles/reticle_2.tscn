@@ -44,6 +44,6 @@ script = SubResource("GDScript_a8kpl")
 reticle_lines = [null, null, null, null]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203706732]
-modulate = Color(1, 1, 0, 1)
+modulate = Color(1, 0.44705883, 0, 1)
 scale = Vector2(3.1263232, 3.1263232)
 texture = ExtResource("1_mcmap")
