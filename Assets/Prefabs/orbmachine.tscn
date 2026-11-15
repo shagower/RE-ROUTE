@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cqrbnjc1oee0k"]
+
+[ext_resource type="PackedScene" uid="uid://deh28b2tle5ew" path="res://Assets/Prefabs/orbmachine.glb" id="1_megqc"]
+
+[node name="orbmachine" unique_id=1956023943 instance=ExtResource("1_megqc")]
