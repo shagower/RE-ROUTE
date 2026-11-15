@@ -23,10 +23,11 @@ func _process(_delta):
 	
 func _physics_process(delta: float) -> void:
 	var shoot_velocity = move_direction * speed * delta
-	var collision = move_and_collide(shoot_velocity)
-	
+	var collision: = move_and_collide(shoot_velocity)
+
 	if collision:
 		move_direction = move_direction.bounce(collision.get_normal())
+		if collision.get_collider().is_in_group("ObjectCollision"): queue_free()
 		
 	
 	

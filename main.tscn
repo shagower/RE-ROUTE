@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_4c57u"]
 [ext_resource type="AudioStream" uid="uid://brqemm3drwjpm" path="res://Assets/SFX/Doors/doormove7.wav" id="10_vivmo"]
 [ext_resource type="AudioStream" uid="uid://cs52l3vcwymex" path="res://Assets/SFX/Doors/doorstop1.wav" id="11_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="15_vivmo"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
@@ -49,12 +50,6 @@ ssil_sharpness = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oi4gx"]
 shader = ExtResource("4_1bvp3")
-
-[sub_resource type="BoxMesh" id="BoxMesh_43y8t"]
-size = Vector3(1, 1, 0.3486328)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vivmo"]
-data = PackedVector3Array(-0.5, 0.5, 0.1743, 0.5, 0.5, 0.1743, -0.5, -0.5, 0.1743, 0.5, 0.5, 0.1743, 0.5, -0.5, 0.1743, -0.5, -0.5, 0.1743, 0.5, 0.5, -0.1743, -0.5, 0.5, -0.1743, 0.5, -0.5, -0.1743, -0.5, 0.5, -0.1743, -0.5, -0.5, -0.1743, 0.5, -0.5, -0.1743, 0.5, 0.5, 0.1743, 0.5, 0.5, -0.1743, 0.5, -0.5, 0.1743, 0.5, 0.5, -0.1743, 0.5, -0.5, -0.1743, 0.5, -0.5, 0.1743, -0.5, 0.5, -0.1743, -0.5, 0.5, 0.1743, -0.5, -0.5, -0.1743, -0.5, 0.5, 0.1743, -0.5, -0.5, 0.1743, -0.5, -0.5, -0.1743, 0.5, 0.5, 0.1743, -0.5, 0.5, 0.1743, 0.5, 0.5, -0.1743, -0.5, 0.5, 0.1743, -0.5, 0.5, -0.1743, 0.5, 0.5, -0.1743, -0.5, -0.5, 0.1743, 0.5, -0.5, 0.1743, -0.5, -0.5, -0.1743, 0.5, -0.5, 0.1743, 0.5, -0.5, -0.1743, -0.5, -0.5, -0.1743)
 
 [node name="main" type="Node3D" unique_id=1945090909]
 
@@ -170,15 +165,8 @@ transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08
 [node name="Button2" parent="." unique_id=1085458486 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1509426, 0.0003838539, 5.2233095)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=618745289]
-transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.70710677, 0, 0.70710677, 0.7071067, 0, 3.9578543, -0.3256836)
-cast_shadow = 0
-mesh = SubResource("BoxMesh_43y8t")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=2030969477]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=391340255]
-shape = SubResource("ConcavePolygonShape3D_vivmo")
+[node name="BouncePad" parent="." unique_id=1966357903 instance=ExtResource("15_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 3.5856345, 0.3828125)
 
 [connection signal="pressed" from="Button" to="Map/door" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="orbmachine" method="_on_button_2_pressed"]
