@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://yw248thkw734"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ehuit"]
+[ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="2_5mrt3"]
+[ext_resource type="ArrayMesh" uid="uid://d3472cs5yr6" path="res://Assets/Meshes/tutorial.obj" id="3_rwowx"]
+
+[sub_resource type="Environment" id="Environment_hu44a"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_color = Color(0.47440344, 0.26106426, 0.23348269, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 1
+ssil_sharpness = 1.0
+
+[node name="Tutorial" type="Node3D" unique_id=168769492]
+
+[node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_ehuit")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=106584436]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+material_override = ExtResource("2_5mrt3")
+mesh = ExtResource("3_rwowx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MeshInstance3D" unique_id=120056869]
+environment = SubResource("Environment_hu44a")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1173489197]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=250081514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.637451, 0)
+light_color = Color(0.93333334, 1, 0.93333334, 1)
+light_energy = 26.433
+light_indirect_energy = 1.04
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_range = 172.546
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights/OmniLight3D" unique_id=1854420625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.892847, 0)
+light_color = Color(0.9137255, 1, 0.9098039, 1)
+light_energy = 2.841
+shadow_enabled = true
+shadow_blur = 0.0
+omni_range = 17.173
