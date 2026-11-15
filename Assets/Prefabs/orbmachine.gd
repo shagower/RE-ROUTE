@@ -20,3 +20,7 @@ func fire():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_button_2_pressed() -> void:
+	$AnimationPlayer.play("shoot") # Replace with function body.

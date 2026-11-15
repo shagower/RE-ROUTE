@@ -50,6 +50,12 @@ ssil_sharpness = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oi4gx"]
 shader = ExtResource("4_1bvp3")
 
+[sub_resource type="BoxMesh" id="BoxMesh_43y8t"]
+size = Vector3(1, 1, 0.3486328)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vivmo"]
+data = PackedVector3Array(-0.5, 0.5, 0.1743, 0.5, 0.5, 0.1743, -0.5, -0.5, 0.1743, 0.5, 0.5, 0.1743, 0.5, -0.5, 0.1743, -0.5, -0.5, 0.1743, 0.5, 0.5, -0.1743, -0.5, 0.5, -0.1743, 0.5, -0.5, -0.1743, -0.5, 0.5, -0.1743, -0.5, -0.5, -0.1743, 0.5, -0.5, -0.1743, 0.5, 0.5, 0.1743, 0.5, 0.5, -0.1743, 0.5, -0.5, 0.1743, 0.5, 0.5, -0.1743, 0.5, -0.5, -0.1743, 0.5, -0.5, 0.1743, -0.5, 0.5, -0.1743, -0.5, 0.5, 0.1743, -0.5, -0.5, -0.1743, -0.5, 0.5, 0.1743, -0.5, -0.5, 0.1743, -0.5, -0.5, -0.1743, 0.5, 0.5, 0.1743, -0.5, 0.5, 0.1743, 0.5, 0.5, -0.1743, -0.5, 0.5, 0.1743, -0.5, 0.5, -0.1743, 0.5, 0.5, -0.1743, -0.5, -0.5, 0.1743, 0.5, -0.5, 0.1743, -0.5, -0.5, -0.1743, 0.5, -0.5, 0.1743, 0.5, -0.5, -0.1743, -0.5, -0.5, -0.1743)
+
 [node name="main" type="Node3D" unique_id=1945090909]
 
 [node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_ig7tw")]
@@ -97,15 +103,23 @@ shadow_reverse_cull_face = true
 shadow_blur = 0.0
 omni_range = 17.173
 
+[node name="OmniLight3D3" type="OmniLight3D" parent="Map/Lights" unique_id=1235593544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 3.745, 0)
+light_color = Color(0.83137256, 0.9372549, 0.9098039, 1)
+light_energy = 2.841
+shadow_enabled = true
+shadow_blur = 0.0
+omni_range = 20.868
+
 [node name="Interactables" type="Node3D" parent="Map" unique_id=1952223457]
 
-[node name="cube1" parent="Map/Interactables" unique_id=1381872648 groups=["Reticle_Interact"] instance=ExtResource("4_kek77")]
+[node name="cube1" parent="Map/Interactables" unique_id=1381872648 instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4428928, 2.6575267, -2.1511478)
 
-[node name="cube2" parent="Map/Interactables" unique_id=747316611 groups=["Reticle_Interact"] instance=ExtResource("4_kek77")]
+[node name="cube2" parent="Map/Interactables" unique_id=747316611 instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6465882, 4.012185, -2.1511478)
 
-[node name="cube3" parent="Map/Interactables" unique_id=1742869142 groups=["Reticle_Interact"] instance=ExtResource("4_kek77")]
+[node name="cube3" parent="Map/Interactables" unique_id=1742869142 instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9845077, 2.6575267, -2.1511478)
 
 [node name="door" type="MeshInstance3D" parent="Map" unique_id=1394102121]
@@ -125,32 +139,24 @@ stream = ExtResource("10_vivmo")
 [node name="Stop" type="AudioStreamPlayer3D" parent="Map/door" unique_id=1419961855]
 stream = ExtResource("11_2cqfq")
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1235593544]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 3.745, 0)
-light_color = Color(0.83137256, 0.9372549, 0.9098039, 1)
-light_energy = 2.841
-shadow_enabled = true
-shadow_blur = 0.0
-omni_range = 20.868
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=771664980]
 environment = SubResource("Environment_6g22i")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1484718534]
+[node name="Shader" type="CanvasLayer" parent="." unique_id=1484718534]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1859138704]
+[node name="ColorRect" type="ColorRect" parent="Shader" unique_id=1859138704]
 texture_filter = 1
 material = SubResource("ShaderMaterial_oi4gx")
 offset_right = 1157.5
 offset_bottom = 652.0
 mouse_filter = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=487019448]
+[node name="Sprite2D" type="Sprite2D" parent="Shader" unique_id=487019448]
 position = Vector2(109.34374, 28.5)
 scale = Vector2(1.6562499, 1.65625)
 texture = ExtResource("8_kek77")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=887911302]
+[node name="Background Audio" type="AudioStreamPlayer3D" parent="." unique_id=887911302]
 stream = ExtResource("9_kek77")
 autoplay = true
 parameters/looping = true
@@ -161,4 +167,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4654117, 0, 2.2639318)
 [node name="orbmachine" parent="." unique_id=1956023943 instance=ExtResource("15_vivmo")]
 transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, 0, 3.5035734, 6)
 
+[node name="Button2" parent="." unique_id=1085458486 instance=ExtResource("10_4c57u")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1509426, 0.0003838539, 5.2233095)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=618745289]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.70710677, 0, 0.70710677, 0.7071067, 0, 3.9578543, -0.3256836)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_43y8t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=2030969477]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=391340255]
+shape = SubResource("ConcavePolygonShape3D_vivmo")
+
 [connection signal="pressed" from="Button" to="Map/door" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="orbmachine" method="_on_button_2_pressed"]
