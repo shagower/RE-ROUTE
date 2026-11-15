@@ -2,32 +2,33 @@
 
 [ext_resource type="Script" uid="uid://dcihonbt58fj3" path="res://Assets/Prefabs/Scripts/bounce_pad.gd" id="1_hqe6q"]
 [ext_resource type="Material" uid="uid://tqueyobpmejo" path="res://Assets/Materials/bouncepad.tres" id="2_bs1ti"]
-[ext_resource type="Script" uid="uid://botrwft07418o" path="res://rotatepart.gd" id="3_ptibe"]
-[ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="4_hjih1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yaehf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oi4gx"]
-size = Vector3(2.634491, 3.2416687, 0.24572754)
+size = Vector3(1.1215649, 1.0240402, 4.5419006)
 
-[sub_resource type="BoxMesh" id="BoxMesh_uf1ln"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_074og"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_rufcw"]
-size = Vector3(1, 1.5375977, 2.8935547)
-
-[node name="BouncePad" type="Area3D" unique_id=1966357903 groups=["BouncePad"]]
+[node name="Node3D" type="Node3D" unique_id=1243940725 groups=["BouncePad", "PlayerCollision", "Reticle_Interact"]]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_hqe6q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=828721477 groups=["BouncePad"]]
-transform = Transform3D(1, 0, 0, 0, 0.9999904, 0, 0, 0, 0.9999904, 0.027008057, 0.029206512, -0.0026245099)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1970372641 groups=["BouncePad", "PlayerCollision", "Reticle_Interact"]]
+transform = Transform3D(2.6, 0, 0, 0, 3.199998, 0, 0, 0, 0.0999999, 0, 0, 0)
+material_override = ExtResource("2_bs1ti")
+mesh = SubResource("BoxMesh_yaehf")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D2" unique_id=523603417 groups=["BouncePad", "PlayerCollision", "Reticle_Interact"]]
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/Area3D" unique_id=1627724553 groups=["BouncePad", "PlayerCollision", "Reticle_Interact"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002415645, -0.015438102, -0.15483108)
 shape = SubResource("BoxShape3D_oi4gx")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1899185543]
-transform = Transform3D(2.6, 0, 0, 0, 3.1999986, 0, 0, 0, 0.09999992, 0, 0, 0)
-material_override = ExtResource("2_bs1ti")
-mesh = SubResource("BoxMesh_uf1ln")
-script = ExtResource("3_ptibe")
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1932061922 groups=["BouncePad", "PlayerCollision", "Reticle_Interact"]]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D2" unique_id=412022247]
-transform = Transform3D(0.048223373, 0, 0, 0, 1, 0, 0, 0, 0.22902773, 0, -0.3062787, -0.03489685)
-material_override = ExtResource("4_hjih1")
-mesh = SubResource("BoxMesh_rufcw")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1737446907 groups=["BouncePad", "PlayerCollision", "Reticle_Interact"]]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_074og")
