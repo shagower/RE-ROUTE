@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://x1r26152nsdv"]
+
+[ext_resource type="Texture2D" uid="uid://cv3qeyr8dcem2" path="res://Assets/Asset Textures/Material Tetxures/diamondplate.png" id="1_3mevx"]
+
+[resource]
+albedo_texture = ExtResource("1_3mevx")
+uv1_scale = Vector3(0.5, 1.53, 0.5)
+uv1_triplanar = true

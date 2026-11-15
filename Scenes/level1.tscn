@@ -105,7 +105,7 @@ mesh = SubResource("BoxMesh_rqhku")
 shape = SubResource("ConcavePolygonShape3D_cpkqv")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="OmniLight3D4" unique_id=93432295]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.083527, -2.356535, 10.741262)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.083527, -2.2341065, 10.741262)
 material_override = ExtResource("1_2a60c")
 mesh = SubResource("BoxMesh_d1mwp")
 
