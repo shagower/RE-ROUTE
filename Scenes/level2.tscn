@@ -129,7 +129,7 @@ mesh = SubResource("BoxMesh_styii")
 shape = SubResource("ConcavePolygonShape3D_lgosu")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1543147266]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.1585374, 18.38794, -17.375868)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.1778207, 18.38794, -17.375868)
 material_override = ExtResource("4_onqnr")
 mesh = SubResource("BoxMesh_mhlpv")
 
@@ -139,7 +139,7 @@ mesh = SubResource("BoxMesh_mhlpv")
 shape = SubResource("ConcavePolygonShape3D_ng020")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1265249851]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.747191, 15.979135, -17.375868)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.7664742, 15.979135, -17.375868)
 material_override = ExtResource("4_onqnr")
 mesh = SubResource("BoxMesh_styii")
 

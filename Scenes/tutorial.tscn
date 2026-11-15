@@ -303,7 +303,7 @@ mesh = SubResource("PlaneMesh_oi4gx")
 surface_material_override/0 = SubResource("StandardMaterial3D_koko0")
 
 [node name="Label3D" type="Label3D" parent="Frame/MeshInstance3D" unique_id=2146693177]
-transform = Transform3D(-0.8589716, 1.366327e-07, -1.336926e-07, -1.14838144e-07, -1.1146644e-07, 1.0000001, 1.1736362e-07, 1, 1.1146647e-07, 0, 0, 0)
+transform = Transform3D(-0.8589716, 1.366327e-07, -1.3369258e-07, -1.14838144e-07, -1.1146644e-07, 1.0000001, 1.17363626e-07, 1, 1.1146647e-07, 0, 0.011360168, 0)
 modulate = Color(1, 0.5176471, 0, 1)
 text = "hey so like press E or LMB to interact
 
