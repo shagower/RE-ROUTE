@@ -29,6 +29,7 @@ enabled=PackedStringArray()
 PlayerCollision=""
 ObjectCollision=""
 Interactable=""
+player_raycast=""
 
 [input]
 
