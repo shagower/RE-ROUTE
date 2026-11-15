@@ -33,5 +33,5 @@ light_energy = 1.825
 shadow_enabled = true
 omni_range = 2.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1348081785]
+[node name="loop" type="AudioStreamPlayer3D" parent="." unique_id=1348081785]
 stream = SubResource("AudioStreamWAV_xwl3f")
