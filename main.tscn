@@ -70,6 +70,12 @@ omni_range = 17.173
 [node name="cube1" parent="Map/Interactables" unique_id=1381872648 instance=ExtResource("4_kek77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4428928, 2.6575267, -2.1511478)
 
+[node name="cube2" parent="Map/Interactables" unique_id=747316611 instance=ExtResource("4_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9845077, 2.6575267, -2.1511478)
+
+[node name="cube3" parent="Map/Interactables" unique_id=1742869142 instance=ExtResource("4_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7866477, 4.1208744, -2.1511478)
+
 [node name="Bounceorb" type="MeshInstance3D" parent="Map" unique_id=1956557058]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.347392, 1.0000002, 0.28925562)
 material_override = ExtResource("5_272bh")
