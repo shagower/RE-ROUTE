@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_bhfnd"]
 [ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Assets/Prefabs/switch_scene.tscn" id="12_8mnmb"]
 [ext_resource type="ArrayMesh" uid="uid://cuvcxa2mya5ld" path="res://Assets/Meshes/FRAME.obj" id="12_koko0"]
-[ext_resource type="Material" uid="uid://d1tr4kebtbug0" path="res://Assets/Materials/cube.tres" id="13_koko0"]
 
 [sub_resource type="Environment" id="Environment_hu44a"]
 background_color = Color(1, 1, 1, 1)
@@ -295,8 +294,8 @@ shape = SubResource("BoxShape3D_2nb4t")
 
 [node name="Frame" type="MeshInstance3D" parent="." unique_id=1059257779]
 transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, 37.9525, 3.607658, 5.328102)
+material_override = ExtResource("2_5mrt3")
 mesh = ExtResource("12_koko0")
-surface_material_override/0 = ExtResource("13_koko0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Frame" unique_id=745279296]
 transform = Transform3D(-8.258881e-08, 1, 1.6919934e-07, -1.889412, -4.3711385e-08, 5.6399784e-08, 8.258884e-08, -1.3113416e-07, 1.2902766, 0.0217247, 0, 0)
