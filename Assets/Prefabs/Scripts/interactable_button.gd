@@ -15,4 +15,5 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_button_pressed() -> void:
 	$Button/Mesh/AnimationPlayer.play("press")
 	# Broadcast the signal so this specific instance can trigger its unique action
+	$Button/AudioStreamPlayer3D.play()
 	pressed.emit()

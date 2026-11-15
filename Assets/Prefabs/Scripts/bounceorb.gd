@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var move_direction = Vector3.RIGHT
 
 var camera
+var canmove = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera = get_viewport().get_camera_3d()
@@ -23,12 +24,18 @@ func _process(_delta):
 		look_at(target, up)
 	
 func _physics_process(delta: float) -> void:
+	if not canmove: pass
 	var shoot_velocity = move_direction * speed * delta
 	var collision: = move_and_collide(shoot_velocity)
 
 	if collision:
 		move_direction = move_direction.bounce(collision.get_normal())
-		if collision.get_collider().is_in_group("ObjectCollision"): queue_free()
+		$bounce.play()
+		if collision.get_collider().is_in_group("ObjectCollision"):
+			$explode.play() 
+			canmove = false
+			await not $explode.playing
+			queue_free()
 		
 	
 	

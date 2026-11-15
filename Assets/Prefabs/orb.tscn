@@ -4,6 +4,8 @@
 [ext_resource type="Material" uid="uid://c82bisp5wlqau" path="res://Assets/Materials/energyball.tres" id="2_8v3oj"]
 [ext_resource type="ArrayMesh" uid="uid://bbgp4gg51mdsj" path="res://Assets/Meshes/bounceorb.obj" id="3_1cs1q"]
 [ext_resource type="AudioStream" uid="uid://ctx3pm2y4r5pp" path="res://Assets/SFX/Other/energy_sing_loop4.wav" id="4_8v3oj"]
+[ext_resource type="AudioStream" uid="uid://q57l5hm1hybp" path="res://Assets/SFX/Other/energy_bounce2.wav" id="5_w0hi6"]
+[ext_resource type="AudioStream" uid="uid://dqayu1rxsvfsx" path="res://Assets/SFX/Other/energy_disintegrate4.wav" id="6_7yng2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oi4gx"]
 
@@ -27,3 +29,10 @@ omni_range = 2.0
 [node name="loop" type="AudioStreamPlayer3D" parent="." unique_id=1348081785]
 stream = ExtResource("4_8v3oj")
 volume_db = -3.0
+
+[node name="bounce" type="AudioStreamPlayer3D" parent="." unique_id=1042603088]
+stream = ExtResource("5_w0hi6")
+volume_db = -3.0
+
+[node name="explode" type="AudioStreamPlayer3D" parent="." unique_id=2058883112]
+stream = ExtResource("6_7yng2")
