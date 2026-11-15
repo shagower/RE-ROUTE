@@ -30,6 +30,7 @@ PlayerCollision=""
 ObjectCollision=""
 Interactable=""
 player_raycast=""
+Reticle_Interact=""
 
 [input]
 

@@ -8,7 +8,7 @@ func _ready() -> void:
 	raycast = get_tree().get_first_node_in_group("player_raycast")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") and raycast:
+	if (event.is_action_pressed("interact") or event.is_action_pressed("throw")) and raycast:
 		if raycast.is_colliding() and raycast.get_collider() == $Button:
 			_on_button_pressed()
 

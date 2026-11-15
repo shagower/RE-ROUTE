@@ -57,10 +57,10 @@ mesh = ExtResource("1_esx78")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Base/StaticBody3D" unique_id=913957679]
 shape = SubResource("ConcavePolygonShape3D_qcbul")
 
-[node name="Button" type="Area3D" parent="." unique_id=2071410883]
+[node name="Button" type="Area3D" parent="." unique_id=2071410883 groups=["Reticle_Interact"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009409208, 1.3116162, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Button" unique_id=1454795844]
+[node name="Mesh" type="MeshInstance3D" parent="Button" unique_id=1454795844 groups=["Reticle_Interact"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.312, 0)
 mesh = ExtResource("2_qcbul")
 surface_material_override/0 = SubResource("StandardMaterial3D_oi4gx")
@@ -68,7 +68,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_oi4gx")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button/Mesh" unique_id=301566919]
 libraries/ = SubResource("AnimationLibrary_ggcsl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Button" unique_id=1559130886]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button" unique_id=1559130886 groups=["Reticle_Interact"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005126953, 0.0256958, -0.0038909912)
 shape = SubResource("BoxShape3D_oi4gx")
 
