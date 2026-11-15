@@ -13,6 +13,7 @@ config_version=5
 config/name="RE-ROUTE"
 run/main_scene="uid://yw248thkw734"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/image="uid://c0mds21klggtr"
 config/icon="res://icon.svg"
 
 [display]
