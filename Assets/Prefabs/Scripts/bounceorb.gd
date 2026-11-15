@@ -11,6 +11,13 @@ func _ready() -> void:
 	camera = get_viewport().get_camera_3d()
 	$loop.play()
 
+func destroy():
+	$explode.play() 
+	canmove = false
+	await not $explode.playing
+	queue_free()
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if camera: 
@@ -31,11 +38,8 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		move_direction = move_direction.bounce(collision.get_normal())
 		$bounce.play()
-		if collision.get_collider().is_in_group("ObjectCollision"):
-			$explode.play() 
-			canmove = false
-			await not $explode.playing
-			queue_free()
+		if not collision.get_collider().is_in_group("BouncePad"):
+			destroy()
 		
 	
 	

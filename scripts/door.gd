@@ -4,12 +4,15 @@ extends MeshInstance3D
 @export var opened_position: Vector3
 @export var tween_speed = 3
 @export var timeout_time = 1.5
+## @export var open_signal: Signal
 var closed_position
 
 func _ready() -> void:
 	closed_position = global_position
+	
+	## open_signal.connect(open)
 
-func _on_button_pressed() -> void:
+func open() -> void:
 	var tween = create_tween()
 	tween.set_ease(tween.EASE_IN)
 	tween.tween_property(self,"position",opened_position,tween_speed)

@@ -9,30 +9,30 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oi4gx"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1185296516]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1185296516 groups=["Orb"]]
 script = ExtResource("1_xwl3f")
 
-[node name="Bounceorb" type="MeshInstance3D" parent="." unique_id=1458904019]
+[node name="Bounceorb" type="MeshInstance3D" parent="." unique_id=1458904019 groups=["Orb"]]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0, 0, 0)
 material_override = ExtResource("2_8v3oj")
 mesh = ExtResource("3_1cs1q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1543261143]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1543261143 groups=["Orb"]]
 transform = Transform3D(0.52, 0, 0, 0, 0.52, 0, 0, 0, 0.52, 0, 0, 0)
 shape = SubResource("SphereShape3D_oi4gx")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=340749040]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=340749040 groups=["Orb"]]
 light_energy = 1.825
 shadow_enabled = true
 omni_range = 2.0
 
-[node name="loop" type="AudioStreamPlayer3D" parent="." unique_id=1348081785]
+[node name="loop" type="AudioStreamPlayer3D" parent="." unique_id=1348081785 groups=["Orb"]]
 stream = ExtResource("4_8v3oj")
 volume_db = -3.0
 
-[node name="bounce" type="AudioStreamPlayer3D" parent="." unique_id=1042603088]
+[node name="bounce" type="AudioStreamPlayer3D" parent="." unique_id=1042603088 groups=["Orb"]]
 stream = ExtResource("5_w0hi6")
 volume_db = -3.0
 
-[node name="explode" type="AudioStreamPlayer3D" parent="." unique_id=2058883112]
+[node name="explode" type="AudioStreamPlayer3D" parent="." unique_id=2058883112 groups=["Orb"]]
 stream = ExtResource("6_7yng2")
