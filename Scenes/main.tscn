@@ -155,8 +155,5 @@ parameters/looping = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.403193, 1.5595455, 4.3702292)
 target_scene = "uid://cwevb1lpxn7g4"
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Node3D" unique_id=1410013513]
-omni_range = 2.143
-
 [connection signal="pressed" from="Map/Interactables/Button2" to="Map/Interactables/orbmachine" method="shoot"]
 [connection signal="triggered" from="Map/Interactables/orbmachine2" to="Map/Interactables/door" method="open"]
