@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://duh6ixvyd1iet"]
+
+[ext_resource type="Texture2D" uid="uid://1aaje22uxd0q" path="res://Assets/Asset Textures/Material Tetxures/door.png" id="1_hbw51"]
+
+[resource]
+albedo_texture = ExtResource("1_hbw51")
+uv1_scale = Vector3(3.005, 3.005, 3.005)
+uv1_offset = Vector3(0, -0.505, 0)
