@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://3yxnsw3iod6p"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_2k2h5"]
+[ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="2_x5oe7"]
+[ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="3_46vi4"]
+
+[sub_resource type="Environment" id="Environment_4iphx"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_color = Color(0.47440344, 0.26106426, 0.23348269, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 1
+ssil_sharpness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgkgd"]
+shader = ExtResource("2_x5oe7")
+
+[node name="Level1" type="Node3D" unique_id=2046342796]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1307391375]
+environment = SubResource("Environment_4iphx")
+
+[node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_2k2h5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.371139e-08, -4.37114e-08, -4.371139e-08, -1, 1.9106859e-15, 2.4010332, -2.1481031e-07, -31.136284)
+
+[node name="Shader" type="CanvasLayer" parent="." unique_id=630559260]
+
+[node name="ColorRect" type="ColorRect" parent="Shader" unique_id=1468118029]
+texture_filter = 1
+material = SubResource("ShaderMaterial_jgkgd")
+offset_right = 1157.5
+offset_bottom = 652.0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Shader" unique_id=1252603246]
+position = Vector2(109.34374, 28.5)
+scale = Vector2(1.6562499, 1.65625)
+texture = ExtResource("3_46vi4")
