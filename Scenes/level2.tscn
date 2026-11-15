@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="3_styii"]
 [ext_resource type="ArrayMesh" uid="uid://bbxh0dk8j74cf" path="res://Assets/Meshes/LEVRE2.obj" id="4_dlanv"]
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="4_onqnr"]
+[ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Assets/Prefabs/switch_scene.tscn" id="6_mmf1u"]
 [ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_styii"]
 [ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="7_lgosu"]
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="8_ng020"]
@@ -167,6 +168,10 @@ mesh = SubResource("BoxMesh_styii")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=264971432]
 shape = SubResource("ConcavePolygonShape3D_lgosu")
 
+[node name="Node3D2" parent="MeshInstance3D5" unique_id=423665905 instance=ExtResource("6_mmf1u")]
+transform = Transform3D(1, 0, 0, 0, 707.51715, 0, 0, 0, 925.6911, -4.5696106, -0.15634441, -2.3762913)
+target_scene = "uid://dtlbnpwdwkmko"
+
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=933110205]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 44.663166, 18.294653, -28.442999)
 material_override = ExtResource("4_onqnr")
@@ -214,6 +219,10 @@ opened_position = Vector3(21.22724, 12.539965, -28.590834)
 
 [node name="Button2" parent="." unique_id=2143116758 instance=ExtResource("10_mtqcm")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 41.97124, 12.750388, -32.011757)
+
+[node name="Node3D3" parent="." unique_id=1084461015 instance=ExtResource("6_mmf1u")]
+transform = Transform3D(-4.3711374e-08, 10960.012, 0, -0.9999997, -0.00047907734, 0, 0, 0, 3966.551, 15.273527, 5.2941647, -35.65085)
+target_scene = "uid://8xcfuybx3ja8"
 
 [connection signal="triggered" from="orbmachine2" to="door2" method="open"]
 [connection signal="pressed" from="Button" to="orbmachine" method="shoot"]

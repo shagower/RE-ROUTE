@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="8_bs12r"]
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="9_rqhku"]
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_cpkqv"]
+[ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Assets/Prefabs/switch_scene.tscn" id="11_rqhku"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rqhku"]
 size = Vector3(1, 6.529724, 1.7194824)
@@ -313,6 +314,10 @@ transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, -2
 
 [node name="Button" parent="." unique_id=795097832 instance=ExtResource("10_cpkqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.020208, 0.0003838539, 0.017098978)
+
+[node name="Node3D2" parent="." unique_id=423665905 instance=ExtResource("11_rqhku")]
+transform = Transform3D(1, 0, 0, 0, 707.51715, 0, 0, 0, 925.6911, 26.73737, 2.8917418, -0.0029740334)
+target_scene = "uid://8xcfuybx3ja8"
 
 [connection signal="triggered" from="orbmachine" to="door" method="open"]
 [connection signal="pressed" from="Button" to="orbmachine2" method="shoot"]
