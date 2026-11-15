@@ -1,3 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b7b73s8stpjda"]
 
+[ext_resource type="Texture2D" uid="uid://c232ri5yvb6vl" path="res://Assets/Asset Textures/Material Tetxures/buttontexture.png" id="1_yqlju"]
+
 [resource]
+albedo_texture = ExtResource("1_yqlju")
+uv1_triplanar = true
