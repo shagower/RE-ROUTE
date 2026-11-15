@@ -25,6 +25,6 @@ mesh = ExtResource("3_o60j3")
 
 [node name="CollisionSound" type="AudioStreamPlayer3D" parent="." unique_id=1054556694]
 stream = SubResource("AudioStreamWAV_4c57u")
-max_distance = 8.05
+max_distance = 24.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
