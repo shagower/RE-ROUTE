@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cwevb1lpxn7g4"]
+[gd_scene format=3 uid="uid://yw248thkw734"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ehuit"]
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="2_5mrt3"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="9_bhfnd"]
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_bhfnd"]
 [ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Assets/Prefabs/switch_scene.tscn" id="12_8mnmb"]
+[ext_resource type="ArrayMesh" uid="uid://cuvcxa2mya5ld" path="res://Assets/Meshes/FRAME.obj" id="12_koko0"]
+[ext_resource type="Texture2D" uid="uid://cxwspsg151yoh" path="res://Assets/Asset Textures/UI Textures/cursorinteract.png" id="13_lsb8r"]
 
 [sub_resource type="Environment" id="Environment_hu44a"]
 background_color = Color(1, 1, 1, 1)
@@ -77,6 +79,15 @@ size = Vector3(5.0287476, 2.5844727, 38.21045)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2nb4t"]
 size = Vector3(5.0287476, 2.5844727, 38.21045)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oi4gx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43y8t"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_on_uv2 = true
+emission_texture = ExtResource("13_lsb8r")
 
 [node name="Tutorial" type="Node3D" unique_id=168769492]
 
@@ -284,6 +295,17 @@ mesh = SubResource("BoxMesh_0pn7o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D10/StaticBody3D" unique_id=1020451792]
 shape = SubResource("BoxShape3D_2nb4t")
+
+[node name="Frame" type="MeshInstance3D" parent="." unique_id=1059257779]
+transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, 37.9525, 3.607658, 5.328102)
+mesh = ExtResource("12_koko0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Frame" unique_id=745279296]
+transform = Transform3D(-8.258881e-08, 1, 1.6919934e-07, -1.889412, -4.3711385e-08, 5.6399784e-08, 8.258884e-08, -1.3113416e-07, 1.2902766, 0, 0, 0)
+mesh = SubResource("PlaneMesh_oi4gx")
+surface_material_override/0 = SubResource("StandardMaterial3D_43y8t")
+
+[node name="SubViewport" type="SubViewport" parent="Frame/MeshInstance3D" unique_id=272675203]
 
 [connection signal="triggered" from="orbmachine2" to="door" method="open"]
 [connection signal="pressed" from="Button" to="orbmachine" method="shoot"]
