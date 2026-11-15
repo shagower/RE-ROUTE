@@ -129,6 +129,10 @@ var heldObject: RigidBody3D
 ## If your game changes the gravity value during gameplay, check this property to allow the player to experience the change in gravity.
 @export var dynamic_gravity : bool = false
 
+@onready var footstep_player = $WalkSFX
+var footstep_canplay = true
+var footstep_landed
+
 #endregion
 
 #region Member Variable Initialization
