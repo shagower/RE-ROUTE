@@ -125,4 +125,4 @@ autoplay = true
 parameters/looping = true
 
 [node name="Button" parent="." unique_id=795097832 instance=ExtResource("10_4c57u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5190754, 1.1920929e-07, 1.7198539)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4654117, 0, 2.2639318)
