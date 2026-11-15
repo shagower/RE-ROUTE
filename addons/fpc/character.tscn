@@ -382,9 +382,10 @@ MarginContainer/constants/margin_top = 10
 [node name="Character" type="CharacterBody3D" unique_id=513471701 node_paths=PackedStringArray("groundRay", "HEAD", "CAMERA", "RAYCAST", "HEADBOB_ANIMATION", "JUMP_ANIMATION", "CROUCH_ANIMATION", "COLLISION_MESH")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_0t4e8")
-default_reticle = "res://addons/fpc/reticles/reticle_1.tscn"
+default_reticle = "uid://coqpusufa8a6k"
 interact_reticle = "uid://3mij3cjhkwsm"
 hold_reticle = "uid://j4alnlbf08av"
+throwForce = 1.5
 groundRay = NodePath("GroundRay")
 HEAD = NodePath("Head")
 CAMERA = NodePath("Head/Camera")
