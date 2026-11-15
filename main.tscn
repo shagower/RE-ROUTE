@@ -150,5 +150,5 @@ opened_position = Vector3(-6.172, 6.8, 0.018)
 [node name="orbmachine2" parent="." unique_id=1723059168 instance=ExtResource("13_ycdy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0107136, 4.0841446, -0.15598273)
 
-[connection signal="pressed" from="Button" to="door" method="open"]
 [connection signal="pressed" from="Button2" to="orbmachine" method="shoot"]
+[connection signal="triggered" from="orbmachine2" to="door" method="open"]
