@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/motorola hello.mp3-ebb01d35ee9980da852cd1c05e
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
