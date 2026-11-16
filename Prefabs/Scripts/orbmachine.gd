@@ -1,6 +1,6 @@
 extends Node3D
 
-var orb = preload("res://Assets/Prefabs/orb.tscn")
+var orb = preload("res://Prefabs/orb.tscn")
 
 var loadedorb: CharacterBody3D = null
 

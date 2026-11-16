@@ -7,7 +7,6 @@
 [ext_resource type="Material" uid="uid://be8pwyuwp8bjw" path="res://Assets/Materials/glowing.tres" id="5_65vds"]
 [ext_resource type="AudioStream" uid="uid://vbd6sst8pcj8" path="res://Assets/SFX/Other/cguard_charging.wav" id="6_om0sg"]
 
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_od41a"]
 grow_amount = -10.246
 
@@ -69,17 +68,17 @@ _data = {
 [node name="orbmachine" unique_id=1956023943 instance=ExtResource("1_megqc")]
 script = ExtResource("2_57xru")
 
-[node name="Cube" parent="." index="0" unique_id=621755792]
+[node name="Cube" parent="." index="0" unique_id=269748023]
 material_override = ExtResource("3_1mgl1")
 surface_material_override/0 = SubResource("StandardMaterial3D_od41a")
 
-[node name="Cube_002" parent="." index="1" unique_id=2015536712]
+[node name="Cube_002" parent="." index="1" unique_id=1979777105]
 material_override = ExtResource("4_om0sg")
 
-[node name="Cube_003" parent="." index="2" unique_id=1096098684]
+[node name="Cube_003" parent="." index="2" unique_id=847258042]
 material_override = ExtResource("4_om0sg")
 
-[node name="Cube_004" parent="." index="3" unique_id=1503190620]
+[node name="Cube_004" parent="." index="3" unique_id=621864841]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 material_override = ExtResource("5_65vds")
 
