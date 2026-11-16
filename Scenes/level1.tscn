@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="9_rqhku"]
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_cpkqv"]
 [ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Assets/Prefabs/switch_scene.tscn" id="11_rqhku"]
+[ext_resource type="AudioStream" uid="uid://dbiogbmgmx01w" path="res://Assets/Music/motorola hello.mp3" id="12_cpkqv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rqhku"]
 size = Vector3(1, 6.529724, 1.7194824)
@@ -318,6 +319,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.020208, 0.0003838539, 0.0
 [node name="Node3D2" parent="." unique_id=423665905 instance=ExtResource("11_rqhku")]
 transform = Transform3D(1, 0, 0, 0, 707.51715, 0, 0, 0, 925.6911, 26.73737, 2.8917418, -0.0029740334)
 target_scene = "uid://8xcfuybx3ja8"
+
+[node name="Background Audio" type="AudioStreamPlayer3D" parent="." unique_id=1459346210]
+stream = ExtResource("12_cpkqv")
+autoplay = true
+parameters/looping = true
 
 [connection signal="triggered" from="orbmachine" to="door" method="open"]
 [connection signal="pressed" from="Button" to="orbmachine2" method="shoot"]

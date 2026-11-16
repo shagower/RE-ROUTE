@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_bhfnd"]
 [ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Assets/Prefabs/switch_scene.tscn" id="12_8mnmb"]
 [ext_resource type="ArrayMesh" uid="uid://cuvcxa2mya5ld" path="res://Assets/Meshes/FRAME.obj" id="12_koko0"]
+[ext_resource type="AudioStream" uid="uid://dbiogbmgmx01w" path="res://Assets/Music/motorola hello.mp3" id="14_lsb8r"]
 
 [sub_resource type="Environment" id="Environment_hu44a"]
 background_color = Color(1, 1, 1, 1)
@@ -314,6 +315,11 @@ autowrap_mode = 3
 
 [node name="RigidBody3D" parent="." unique_id=1381872648 instance=ExtResource("6_koko0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.84366, 0.5321135, -27.139109)
+
+[node name="Background Audio" type="AudioStreamPlayer3D" parent="." unique_id=1052383782]
+stream = ExtResource("14_lsb8r")
+autoplay = true
+parameters/looping = true
 
 [connection signal="triggered" from="orbmachine2" to="door" method="open"]
 [connection signal="pressed" from="Button" to="orbmachine" method="shoot"]
