@@ -15,7 +15,3 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func rotate_panel(): 
 	rotate(axis, deg_to_rad(rotating))
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
