@@ -11,6 +11,7 @@
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1185296516 groups=["Orb"]]
 script = ExtResource("1_xwl3f")
+speed = 10
 
 [node name="Bounceorb" type="MeshInstance3D" parent="." unique_id=1458904019 groups=["Orb"]]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0, 0, 0)

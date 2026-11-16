@@ -14,7 +14,8 @@ func _ready() -> void:
 func destroy():
 	$explode.play() 
 	canmove = false
-	await not $explode.playing
+	self.hide()
+	await get_tree().create_timer(1).timeout
 	queue_free()
 
 

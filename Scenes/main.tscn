@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b8j58yi4nxl7h"]
+[gd_scene format=3 uid="uid://6oq7x174pjbk"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ig7tw"]
 [ext_resource type="ArrayMesh" uid="uid://pisjodgsm2o7" path="res://addons/testroomobj.obj" id="2_0xm2m"]
