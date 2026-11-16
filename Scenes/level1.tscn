@@ -3,12 +3,12 @@
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="1_2a60c"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_lyd6k"]
 [ext_resource type="ArrayMesh" uid="uid://codsp25hujm7a" path="res://Assets/Meshes/level01.obj" id="5_4iphx"]
-[ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_jgkgd"]
-[ext_resource type="PackedScene" uid="uid://cqnpthndb5iaf" path="res://Assets/Prefabs/cube.tscn" id="7_bs12r"]
-[ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="8_bs12r"]
-[ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="9_rqhku"]
-[ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_cpkqv"]
-[ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Assets/Prefabs/switch_scene.tscn" id="11_rqhku"]
+[ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Prefabs/door.tscn" id="6_jgkgd"]
+[ext_resource type="PackedScene" uid="uid://cqnpthndb5iaf" path="res://Prefabs/cube.tscn" id="7_bs12r"]
+[ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Prefabs/orbreceivier.tscn" id="8_bs12r"]
+[ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Prefabs/orbmachine.tscn" id="9_rqhku"]
+[ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Prefabs/button.tscn" id="10_cpkqv"]
+[ext_resource type="PackedScene" uid="uid://cuc5ix85wnlid" path="res://Prefabs/switch_scene.tscn" id="11_rqhku"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rqhku"]
 size = Vector3(1, 6.529724, 1.7194824)

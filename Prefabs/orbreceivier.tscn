@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://vn6iq2n628t5"]
 
-[ext_resource type="PackedScene" uid="uid://deh28b2tle5ew" path="res://Assets/Prefabs/orbmachine.glb" id="1_xwqfw"]
-[ext_resource type="Script" uid="uid://dmdd28gge7q5f" path="res://Assets/Prefabs/Scripts/orbreciever.gd" id="2_xwqfw"]
+[ext_resource type="PackedScene" uid="uid://deh28b2tle5ew" path="res://Assets/Meshes/orbmachine.glb" id="1_xwqfw"]
+[ext_resource type="Script" uid="uid://dmdd28gge7q5f" path="res://Prefabs/Scripts/orbreciever.gd" id="2_xwqfw"]
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="3_garkj"]
 [ext_resource type="Material" uid="uid://d1tr4kebtbug0" path="res://Assets/Materials/cube.tres" id="4_gxfu4"]
 [ext_resource type="Material" uid="uid://be8pwyuwp8bjw" path="res://Assets/Materials/glowing.tres" id="5_jngwl"]
 [ext_resource type="AudioStream" uid="uid://vbd6sst8pcj8" path="res://Assets/SFX/Other/cguard_charging.wav" id="6_r2u3m"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_od41a"]
 grow_amount = -10.246

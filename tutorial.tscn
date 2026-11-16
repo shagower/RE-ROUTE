@@ -5,11 +5,12 @@
 [ext_resource type="ArrayMesh" uid="uid://d3472cs5yr6" path="res://Assets/Meshes/tutorial.obj" id="3_rwowx"]
 [ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="4_rwowx"]
 [ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="5_hu44a"]
-[ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Assets/Prefabs/door.tscn" id="6_hu44a"]
-[ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Assets/Prefabs/bounce_pad.tscn" id="7_0cr88"]
-[ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Assets/Prefabs/orbmachine.tscn" id="8_7vrqn"]
-[ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Assets/Prefabs/orbreceivier.tscn" id="9_bhfnd"]
-[ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Assets/Prefabs/button.tscn" id="10_bhfnd"]
+[ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Prefabs/door.tscn" id="6_hu44a"]
+[ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Prefabs/bounce_pad.tscn" id="7_0cr88"]
+[ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Prefabs/orbmachine.tscn" id="8_7vrqn"]
+[ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Prefabs/orbreceivier.tscn" id="9_bhfnd"]
+[ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Prefabs/button.tscn" id="10_bhfnd"]
+
 
 [sub_resource type="Environment" id="Environment_hu44a"]
 background_color = Color(1, 1, 1, 1)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuc5ix85wnlid"]
 
-[ext_resource type="Script" uid="uid://btg6iiu0m7k01" path="res://Assets/Prefabs/Scripts/switch_scene.gd" id="1_h0yf8"]
+[ext_resource type="Script" uid="uid://btg6iiu0m7k01" path="res://Prefabs/Scripts/switch_scene.gd" id="1_h0yf8"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_43y8t"]
 

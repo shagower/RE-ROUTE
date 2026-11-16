@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://deh28b2tle5ew"
-path="res://.godot/imported/orbmachine.glb-eee842a172b463669a1342fa5dbb1262.scn"
+path="res://.godot/imported/orbmachine.glb-2947b4b112e0724f7b128523c9e3be32.scn"
 
 [deps]
 
-source_file="res://Assets/Prefabs/orbmachine.glb"
-dest_files=["res://.godot/imported/orbmachine.glb-eee842a172b463669a1342fa5dbb1262.scn"]
+source_file="res://Assets/Meshes/orbmachine.glb"
+dest_files=["res://.godot/imported/orbmachine.glb-2947b4b112e0724f7b128523c9e3be32.scn"]
 
 [params]
 

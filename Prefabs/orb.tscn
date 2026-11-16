@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://ss2qcnbjdkvg"]
 
-[ext_resource type="Script" uid="uid://cvg1jpqakhswa" path="res://Assets/Prefabs/Scripts/bounceorb.gd" id="1_xwl3f"]
+[ext_resource type="Script" uid="uid://cvg1jpqakhswa" path="res://Prefabs/Scripts/bounceorb.gd" id="1_xwl3f"]
 [ext_resource type="Material" uid="uid://c82bisp5wlqau" path="res://Assets/Materials/energyball.tres" id="2_8v3oj"]
 [ext_resource type="ArrayMesh" uid="uid://bbgp4gg51mdsj" path="res://Assets/Meshes/bounceorb.obj" id="3_1cs1q"]
 [ext_resource type="AudioStream" uid="uid://ctx3pm2y4r5pp" path="res://Assets/SFX/Other/energy_sing_loop4.wav" id="4_8v3oj"]
 [ext_resource type="AudioStream" uid="uid://q57l5hm1hybp" path="res://Assets/SFX/Other/energy_bounce2.wav" id="5_w0hi6"]
 [ext_resource type="AudioStream" uid="uid://dqayu1rxsvfsx" path="res://Assets/SFX/Other/energy_disintegrate4.wav" id="6_7yng2"]
+
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oi4gx"]
 

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ddn5psgsmgkkj"]
 
-[ext_resource type="Script" uid="uid://dcihonbt58fj3" path="res://Assets/Prefabs/Scripts/bounce_pad.gd" id="1_hqe6q"]
+[ext_resource type="Script" uid="uid://dcihonbt58fj3" path="res://Prefabs/Scripts/bounce_pad.gd" id="1_hqe6q"]
 [ext_resource type="Material" uid="uid://tqueyobpmejo" path="res://Assets/Materials/bouncepad.tres" id="2_bs1ti"]
+
 
 [sub_resource type="BoxMesh" id="BoxMesh_yaehf"]
 
