@@ -481,6 +481,19 @@ func update_debug_menu_per_tick():
 	$UserInterface/DebugPanel.add_property("Velocity", readable_velocity, 3)
 
 
+var count = 0
+var debug_table = [
+	[0,"M"],
+	[0,"I"],
+	[0,"N"],
+	[0,"N"],
+	[0,"E"],
+	[0,"S"],
+	[0,"O"],
+	[0,"T"],
+	[0,"A"],
+]
+
 func _unhandled_input(event : InputEvent):
 	if event is InputEventMouseButton and event.pressed:
 		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
@@ -495,6 +508,10 @@ func _unhandled_input(event : InputEvent):
 			# Where we're going, we don't need InputMap
 			if event.keycode == 4194338: # F7
 				$UserInterface/DebugPanel.visible = !$UserInterface/DebugPanel.visible
+		if OS.get_keycode_string(event.keycode) == debug_table[count][1]:
+			count += 1
+			if count == 9: get_tree().change_scene_to_file("res://Scenes/main.tscn")
+			
 
 #endregion
 
