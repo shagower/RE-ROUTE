@@ -511,6 +511,13 @@ func _unhandled_input(event : InputEvent):
 		if OS.get_keycode_string(event.keycode) == debug_table[count][1]:
 			count += 1
 			if count == 9: get_tree().change_scene_to_file("res://Scenes/main.tscn")
+		if OS.get_keycode_string(event.keycode) == "L": 
+			match Input.mouse_mode:
+				Input.MOUSE_MODE_CAPTURED:
+					Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				Input.MOUSE_MODE_VISIBLE:
+					Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
 			
 
 #endregion

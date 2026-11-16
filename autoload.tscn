@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://diwt8no54upoh"]
+
+[ext_resource type="Shader" uid="uid://dswgv64ipx2u2" path="res://ps1.gdshader" id="1_yqwcp"]
+[ext_resource type="Texture2D" uid="uid://c0mds21klggtr" path="res://Assets/Asset Textures/UI Textures/logo.png" id="2_bgs5k"]
+[ext_resource type="AudioStream" uid="uid://dbiogbmgmx01w" path="res://Assets/Music/motorola hello.mp3" id="3_gf8d3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_scw74"]
+shader = ExtResource("1_yqwcp")
+
+[node name="Autoload" type="Node3D" unique_id=1642050860]
+
+[node name="Shader" type="CanvasLayer" parent="." unique_id=267782710]
+
+[node name="ColorRect" type="ColorRect" parent="Shader" unique_id=833407054]
+texture_filter = 1
+material = SubResource("ShaderMaterial_scw74")
+offset_right = 1157.5
+offset_bottom = 652.0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Shader" unique_id=173272153]
+position = Vector2(109.34374, 28.5)
+scale = Vector2(1.6562499, 1.65625)
+texture = ExtResource("2_bgs5k")
+
+[node name="Label" type="Label" parent="Shader" unique_id=521944776]
+visible = false
+offset_left = 45.0
+offset_top = 79.0
+offset_right = 157.0
+offset_bottom = 134.0
+text = "Press E or Left Mouse to rotate pad
+E to interact with everything else"
+
+[node name="Background Audio" type="AudioStreamPlayer3D" parent="." unique_id=1500648270]
+stream = ExtResource("3_gf8d3")
+volume_db = 70.0
+max_db = 6.0
+autoplay = true
+parameters/looping = true
