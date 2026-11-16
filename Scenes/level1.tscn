@@ -322,6 +322,8 @@ target_scene = "uid://8xcfuybx3ja8"
 
 [node name="Background Audio" type="AudioStreamPlayer3D" parent="." unique_id=1459346210]
 stream = ExtResource("12_cpkqv")
+volume_db = 70.0
+max_db = 6.0
 autoplay = true
 parameters/looping = true
 
