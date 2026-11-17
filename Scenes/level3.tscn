@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Prefabs/bounce_pad.tscn" id="7_csbjj"]
 [ext_resource type="PackedScene" uid="uid://bcjdhksq6js6g" path="res://Prefabs/button.tscn" id="7_vn7r1"]
 [ext_resource type="PackedScene" uid="uid://cqrbnjc1oee0k" path="res://Prefabs/orbmachine.tscn" id="8_h6p24"]
+[ext_resource type="Material" uid="uid://btmfwubltklic" path="res://Assets/Materials/metal_beam.tres" id="8_vn7r1"]
 [ext_resource type="PackedScene" uid="uid://vn6iq2n628t5" path="res://Prefabs/orbreceivier.tscn" id="9_vn7r1"]
 [ext_resource type="ArrayMesh" uid="uid://cuvcxa2mya5ld" path="res://Assets/Meshes/FRAME.obj" id="12_vwkqt"]
 
@@ -249,7 +250,7 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 9.746046, 1
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=1035479693]
 transform = Transform3D(0.20025957, 0, 0, 0, 1, 0, 0, 0, 0.21025413, 9.713264, 5.6426606, -31.261873)
-material_override = ExtResource("4_jaajx")
+material_override = ExtResource("8_vn7r1")
 mesh = SubResource("BoxMesh_fpsp3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D11" unique_id=1044818696]
@@ -259,7 +260,7 @@ shape = SubResource("BoxShape3D_wffsm")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=1766677210]
 transform = Transform3D(0.20025957, 0, 0, 0, 1, 0, 0, 0, 0.21025413, 15.359294, 5.6426606, -31.261873)
-material_override = ExtResource("4_jaajx")
+material_override = ExtResource("8_vn7r1")
 mesh = SubResource("BoxMesh_fpsp3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D12" unique_id=283509902]

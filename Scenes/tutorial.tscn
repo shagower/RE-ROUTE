@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ehuit"]
 [ext_resource type="Material" uid="uid://dw0e8qcxbm2ot" path="res://Assets/Materials/concrete_wall.tres" id="2_5mrt3"]
 [ext_resource type="ArrayMesh" uid="uid://d3472cs5yr6" path="res://Assets/Meshes/tutorial.obj" id="3_rwowx"]
+[ext_resource type="Material" uid="uid://btmfwubltklic" path="res://Assets/Materials/metal_beam.tres" id="6_8mnmb"]
 [ext_resource type="PackedScene" uid="uid://btvjnlwlhabsj" path="res://Prefabs/door.tscn" id="6_hu44a"]
 [ext_resource type="PackedScene" uid="uid://cqnpthndb5iaf" path="res://Prefabs/cube.tscn" id="6_koko0"]
 [ext_resource type="PackedScene" uid="uid://ddn5psgsmgkkj" path="res://Prefabs/bounce_pad.tscn" id="7_0cr88"]
@@ -170,7 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 28, 5, -12)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=2053809619]
 transform = Transform3D(0.20025957, 0, 0, 0, 1, 0, 0, 0, 0.21025413, 28, 1.7025757, -12)
-material_override = ExtResource("2_5mrt3")
+material_override = ExtResource("6_8mnmb")
 mesh = SubResource("BoxMesh_urht8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=720494360]

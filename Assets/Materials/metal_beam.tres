@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://btmfwubltklic"]
+
+[ext_resource type="Texture2D" uid="uid://drokxamaxtpiu" path="res://Assets/Asset Textures/Material Tetxures/metalbeam.png" id="1_157rx"]
+
+[resource]
+albedo_texture = ExtResource("1_157rx")
+uv1_triplanar = true
