@@ -2,7 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_2k2h5"]
 
+[sub_resource type="Environment" id="Environment_s7gh3"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_color = Color(0.47440344, 0.26106426, 0.23348269, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 1
+ssil_sharpness = 1.0
+
 [node name="Level1" type="Node3D" unique_id=2046342796]
 
 [node name="Character" parent="." unique_id=513471701 instance=ExtResource("1_2k2h5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.371139e-08, -4.37114e-08, -4.371139e-08, -1, 1.9106859e-15, 2.4010332, -2.1481031e-07, -31.136284)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=189570853]
+environment = SubResource("Environment_s7gh3")
