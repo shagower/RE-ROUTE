@@ -97,6 +97,15 @@ shadow_blur = 0.0
 omni_range = 49.38
 omni_attenuation = 1.475
 
+[node name="OmniLight3D8" type="OmniLight3D" parent="LevKel4" unique_id=939237097]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -169.78877, 73.730606, -9.465416)
+light_color = Color(0.38290533, 0.717884, 0.48366237, 1)
+light_energy = 7.984
+shadow_enabled = true
+shadow_blur = 0.0
+omni_range = 49.38
+omni_attenuation = 1.475
+
 [node name="OmniLight3D5" type="OmniLight3D" parent="LevKel4" unique_id=156797314]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 60.494358, 88.98705, -124.211075)
 light_color = Color(0.8666667, 0.41960785, 0.21176471, 1)
