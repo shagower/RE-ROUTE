@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://q57l5hm1hybp" path="res://Assets/SFX/Other/energy_bounce2.wav" id="5_w0hi6"]
 [ext_resource type="AudioStream" uid="uid://dqayu1rxsvfsx" path="res://Assets/SFX/Other/energy_disintegrate4.wav" id="6_7yng2"]
 
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_oi4gx"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1185296516 groups=["Orb"]]

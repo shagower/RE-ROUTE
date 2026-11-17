@@ -12,6 +12,7 @@ func _ready() -> void:
 	$loop.play()
 
 func destroy():
+	$loop.stop()
 	$explode.play() 
 	canmove = false
 	self.hide()
