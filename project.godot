@@ -13,7 +13,7 @@ config_version=5
 config/name="RE-ROUTE"
 run/main_scene="uid://yw248thkw734"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-boot_splash/image="uid://c0mds21klggtr"
+boot_splash/image="uid://jscy1b3vcetu"
 config/icon="uid://jscy1b3vcetu"
 
 [autoload]
@@ -27,7 +27,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/itch_uploader/plugin.cfg", "res://addons/shipitch/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/itch_uploader/plugin.cfg")
 
 [global_group]
 

@@ -4,6 +4,9 @@ var orb = preload("res://Prefabs/orb.tscn")
 
 var loadedorb: CharacterBody3D = null
 
+@export_category("Shooting")
+@export var orb_speed = 15
+
 func shoot():
 	$AnimationPlayer.play("shoot")
 
@@ -18,8 +21,5 @@ func fire():
 	loadedorb.global_transform = global_transform
 	var forward_dir: Vector3 = -global_transform.basis.x
 	loadedorb.move_direction = forward_dir
+	loadedorb.speed = orb_speed or 15
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
